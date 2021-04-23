@@ -1,0 +1,1 @@
+These codes were for client-side server of myFlix application and for server-side codes were written in another repository
