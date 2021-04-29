@@ -13,6 +13,10 @@ export class MainView extends React.Component {
       selectedMovie: null
     };
   }
+
+  keypressCallback(event) {
+    console.log(event.key);
+  }
      
   //using axios method to fetch movies from heroku
   
@@ -28,6 +32,8 @@ export class MainView extends React.Component {
       });
   }
 
+
+
   setSelectedMovie(newSelectedMovie) {
    this.setState({
      selectedMovie: newSelectedMovie
@@ -38,7 +44,7 @@ export class MainView extends React.Component {
      const {movies, selectedMovie} = this.state;
 
 
-     if (movies.length === 0) return <div className = "main-view">The list is empty!</div>;
+     if (movies.length === 0) return <div className = "main-view"></div>;
      return (
          <div className="main-view">
            {selectedMovie
@@ -50,8 +56,6 @@ export class MainView extends React.Component {
          </div>
   );
 }
-componentDidMount() {
-  // code executed right after the component is added to the DOM
-}
+
 }
 export default MainView;
