@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import  {LoginView} from '../login-view/login-view';
 import  {RegistrationView} from '../registration-view/registration-view';
@@ -11,7 +13,7 @@ export class MainView extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies:[],
+      movies:[ ],
       selectedMovie: null,
       user:null
     };
@@ -56,22 +58,38 @@ onRegistration(register) {
  render() {
      const {movies, selectedMovie,user,registration} = this.state;
 
-    /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
+    /* If there is no user, the LoginView is rendered. If there is a user logged in, the user 
+    details are *passed as a prop to the LoginView*/
      if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
      if (!user) return <RegistrationView onRegistration={user => this.onRegistraton(user)} />;
 
      if (movies.length === 0) return <div className = "main-view"></div>;
      return (
-         <div className="main-view">
+     <div className="main-view">
            {selectedMovie
-             ? <MovieView movieData = {selectedMovie} onBackClick = {(newSelectMovie) => {this.setSelectedMovie(newSelectMovie);}}/>
-             : movies.map(movie => (
-<MovieCard key={movie._id} movieData={movie} onMovieClick = {(movie) => {this.setSelectedMovie(movie)}} />
-             ))
-           }
-         </div>
-  );
+             ? (
+             <Row className="justify-content-md-center">
+               <Col md={8}>
+               <MovieView movieData = {selectedMovie} onBackClick = {(newSelectMovie) => {this.setSelectedMovie(newSelectMovie);}}/>
+               </Col>
+               </Row>
+               )  
+             
+             : ( 
+             <Row className="justify-content-md-center">
+               {movies.map(movie => (
+               
+                <Col md={3}>
+                   <MovieCard key={movie._id} movieData={movie} onMovieClick = {(movie) => {this.setSelectedMovie(movie)}} />
+                </Col>
+                 ))}
+                </Row>
+             )
+              }
+           
+             </div>
+     )
+};
 }
 
-}
 export default MainView;

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
 
 export function RegistrationView(props) {
   const [ username, setUsername ] = useState('');
@@ -16,7 +19,7 @@ export function RegistrationView(props) {
   };
 
   return (
-    <form>
+    <Form>
       <label>
         Username:
         <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
@@ -34,16 +37,10 @@ export function RegistrationView(props) {
         <input type="birthday" value={birthday} onChange={e => setBirthday(e.target.value)} />
       </label>
       <button type="submit" onClick={handleSubmit}>Submit</button>
-    </form>
+    </Form>
   );
 }
 
 RegistrationView.PropTypes = {
-  user: PropTypes.shape({
-    Username: PropTypes.string.isRequired,
-    Password: PropTypes.string.isRequired,
-    Email: PropTypes.string.isRequired,
-    Birthday: PropTypes.string.isRequired
-  }),
   onRegistration: PropTypes.func
 }; 
