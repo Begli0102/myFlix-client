@@ -10,9 +10,10 @@ import './movie-card.scss';
     
     const { movieData, onMovieClick } = this.props;
 
-    
+
+    // return <div className="movie-card" onClick={() => { onMovieClick(movieData) }}>{movieData.Title}</div>;
+
     return (
-      
     <Card border="primary">
     <Card.Img variant="top" src={movieData.ImagePath} />
       <Card.Body>
