@@ -10,7 +10,13 @@ import './index.scss';
 class MyFlixApplication extends React.Component {
   render() {
     return (
+<<<<<<< Updated upstream
       <MainView />
+=======
+      <Container >
+          <MainView />
+      </Container>
+>>>>>>> Stashed changes
     );
   }
 }
