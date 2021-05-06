@@ -9,10 +9,7 @@ import './movie-card.scss';
   render() {
     
     const { movieData, onMovieClick } = this.props;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    return <div className="movie-card" onClick={() => { onMovieClick(movieData) }}>{movieData.Title}</div>;
-=======
+
     
     return (
       
@@ -29,20 +26,7 @@ import './movie-card.scss';
      </Card>
 
     )
->>>>>>> Stashed changes
-=======
-    return (<Card>
-      <Card.Img variant="top" src={movieData.ImagePath} />
-      <Card.Body>
-        <Card.Title>{movieData.Title}</Card.Title>
-        <Card.Text>{movieData.Description}</Card.Text>
-        <Button onClick={() => onMovieClick(movie)} variant="link">Open</Button>
-      </Card.Body>
-    </Card>
 
-      // <div className="movie-card" onClick={() => { onMovieClick(movieData) }}>{movieData.Title}</div>;
-    )
->>>>>>> myFlix-client-branch
   }
 }
 

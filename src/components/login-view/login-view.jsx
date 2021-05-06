@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> myFlix-client-branch
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
@@ -31,17 +27,11 @@ export function LoginView(props) {
         <Form.Label>Password:</Form.Label>
         <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
       </Form.Group>
-<<<<<<< HEAD
+
       <Form.Group controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group>
-      <Button variant="secondary" size="lg" block onClick={handleSubmit}>
-
-=======
-      <Button variant="primary" type="submit" onClick={handleSubmit}>
->>>>>>> myFlix-client-branch
-        Submit
-      </Button>
+      <Button variant="secondary" size="lg" block onClick={handleSubmit}>Submit</Button>
     </Form>
   );
 }

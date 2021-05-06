@@ -3,18 +3,13 @@ import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
+
 import './main-view.scss';
+
 
 import  {LoginView} from '../login-view/login-view';
 import  {RegistrationView} from '../registration-view/registration-view';
->>>>>>> Stashed changes
-=======
-import  {LoginView} from '../login-view/login-view';
-import  {RegistrationView} from '../registration-view/registration-view';
->>>>>>> myFlix-client-branch
+
 import  {MovieCard}  from '../movie-card/movie-card';
 import  {MovieView} from '../movie-view/movie-view';
 
@@ -75,19 +70,6 @@ onRegistration(register) {
 
      if (movies.length === 0) return <div className = "main-view"></div>;
      return (
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-         <div className="main-view">
-           {selectedMovie
-             ? <MovieView movieData = {selectedMovie} onBackClick = {(newSelectMovie) => {this.setSelectedMovie(newSelectMovie);}}/>
-             : movies.map(movie => (
-<MovieCard key={movie._id} movieData={movie} onMovieClick = {(movie) => {this.setSelectedMovie(movie)}} />
-             ))
-           }
-         </div>
-  );
-=======
-     
      <Row className="main-view justify-content-md-center">
            {selectedMovie
              ? (
@@ -112,34 +94,8 @@ onRegistration(register) {
           
      )
 };
->>>>>>> Stashed changes
-=======
-     <div className="main-view">
-           {selectedMovie
-             ? (
-             <Row className="justify-content-md-center">
-               <Col md={8}>
-               <MovieView movieData = {selectedMovie} onBackClick = {(newSelectMovie) => {this.setSelectedMovie(newSelectMovie);}}/>
-               </Col>
-               </Row>
-               )  
-             
-             : ( 
-             <Row className="justify-content-md-center">
-               {movies.map(movie => (
-               
-                <Col md={3}>
-                   <MovieCard key={movie._id} movieData={movie} onMovieClick = {(movie) => {this.setSelectedMovie(movie)}} />
-                </Col>
-                 ))}
-                </Row>
-             )
-              }
-           
-             </div>
-     )
 };
->>>>>>> myFlix-client-branch
-}
+
+
 
 export default MainView;

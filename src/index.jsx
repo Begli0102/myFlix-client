@@ -10,19 +10,19 @@ import './index.scss';
 class MyFlixApplication extends React.Component {
   render() {
     return (
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-      <MainView />
-=======
+// <<<<<<< HEAD
+// <<<<<<< Updated upstream
+//       <MainView />
+// =======
       <Container >
           <MainView />
       </Container>
->>>>>>> Stashed changes
-=======
-      <Container>
-          <MainView />
-      </Container>
->>>>>>> myFlix-client-branch
+// >>>>>>> Stashed changes
+// =======
+//       <Container>
+//           <MainView />
+//       </Container>
+// >>>>>>> myFlix-client-branch
     );
   }
 }
