@@ -1,4 +1,6 @@
 import React from 'react';
+import Col from 'react-bootstrap/Col';
+
 
 export class MovieView extends React.Component {
 
