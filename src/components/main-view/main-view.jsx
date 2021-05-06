@@ -24,13 +24,10 @@ export class MainView extends React.Component {
     };
   }
 
-  keypressCallback(event) {
-    console.log(event.key);
-  }
 
-
+     
   //using axios method to fetch movies from heroku
-
+  
   componentDidMount(){
     axios.get('https://myflix01025.herokuapp.com/movies')
       .then(response => {
@@ -76,29 +73,29 @@ onRegistration(register) {
      <Row className="main-view justify-content-md-center">
            {selectedMovie
              ? (
-
+             
                <Col md={8}>
                <MovieView movieData = {selectedMovie} onBackClick = {(newSelectMovie) => {this.setSelectedMovie(newSelectMovie);}}/>
                </Col>
-
-               )
-
+              
+               )  
+             
              : (
                movies.map(movie => (
-
+               
                 <Col md={4}>
                    <MovieCard key={movie._id} movieData={movie} onMovieClick = {(movie) => {this.setSelectedMovie(movie)}} />
                 </Col>
                  ))
-
+               
                )
               }
            </Row>
-
+          
      )
 };
-
 };
+
 
 
 export default MainView;
