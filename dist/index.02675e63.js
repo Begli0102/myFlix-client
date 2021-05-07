@@ -31108,29 +31108,16 @@ try {
           variant: "primary",
           size: "md",
           block: true,
-          onClick: () => onMovieClick(movie),
+          onClick: () => {
+            onMovieClick(movieData.Title);
+          },
           __self: this,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 22,
             columnNumber: 10
           }
-        }, "Open")), /*#__PURE__*/_reactDefault.default.createElement(_reactBootstrapCardDefault.default.Footer, {
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 24,
-            columnNumber: 5
-          }
-        }, /*#__PURE__*/_reactDefault.default.createElement("small", {
-          className: "text-muted",
-          __self: this,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 25,
-            columnNumber: 5
-          }
-        }, "Last updated 3 mins ago")))
+        }, "Open")))
       );
     }
   }
@@ -31477,6 +31464,8 @@ try {
             columnNumber: 11
           }
         }, movieData.Genre)), /*#__PURE__*/_reactDefault.default.createElement("button", {
+          variant: "primary",
+          size: "md",
           onClick: () => {
             onBackClick(null);
           },
