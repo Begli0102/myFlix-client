@@ -1,0 +1,42 @@
+.form {
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+  color: azure;
+  border: darkblue;
+}
+.header {
+  height: auto;
+  width: 100%;
+  cursor: pointer;
+}
+.movie-view {
+  margin: 20px 0;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  border-radius: 5%;
+  border: cornflowerblue;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+}
+
+.label {
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: blue;
+}
+.main-view {
+  color: cornflowerblue;
+  font-size: medium;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  row-gap: 20px;
+}
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.778c89a2.css.map */

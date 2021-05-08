@@ -13,14 +13,16 @@ import './movie-card.scss';
     return (
 
       <Card border="primary">
+    <Card.Header className='header'>
   <Card.Img variant="top" src={movieData.ImagePath} />
+  </Card.Header>
   <Card.Body>
-    <Card.Title>{movieData.Title}</Card.Title>
-    <Card.Text>
+    {/* <Card.Title>{movieData.Title}</Card.Title> */}
+    {/* <Card.Text>
     {movieData.Description}
-    </Card.Text>
-    <Button variant="primary" size="md" block onClick={() => { onMovieClick(movieData.Title) }}>Open</Button>
-  </Card.Body>
+    </Card.Text> */}
+    <Button variant="primary" size="md" block onClick={() => { onMovieClick(movieData) }}>Open</Button>  
+    </Card.Body>
 </Card>
 
     )
