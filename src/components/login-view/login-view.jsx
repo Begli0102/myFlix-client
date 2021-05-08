@@ -18,6 +18,7 @@ export function LoginView(props) {
 
   return (
     <Form>
+      
       <Form.Group controlId="formUsername">
         <Form.Label>Username:</Form.Label>
         <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
@@ -31,7 +32,8 @@ export function LoginView(props) {
       <Form.Group controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group>
-      <Button variant="secondary" size="lg" block onClick={handleSubmit}>Submit</Button>
+      <Button variant="secondary" size="md " block onClick={handleSubmit}>Submit</Button>
+      
     </Form>
   );
 }
