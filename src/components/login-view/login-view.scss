@@ -1,8 +1,13 @@
 .form {
-  margin-top: 50px;
-  // display: flex;
+   margin: 50px;
+  //display: flex;
   align-items: center;
   justify-content: center;
   color: azure;
-  border:darkblue;
+  border: black;
+   padding: 200px;
+   background-color: lightgray;
+}
+.label{
+  color:cadetblue;
 }

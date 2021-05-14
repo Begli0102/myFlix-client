@@ -5,27 +5,32 @@ import Card from 'react-bootstrap/Card';
 
 import './movie-card.scss';
 
+import { Link } from "react-router-dom";
+
   export class MovieCard extends React.Component {
   render() {
     
-    const { movieData, onMovieClick } = this.props;
+    const { movieData} = this.props;
 
     return (
 
-      <Card border="primary">
-    <Card.Header className='header'>
-  <Card.Img variant="top" src={movieData.ImagePath} />
+      <Card className='movie-card' border="primary">
+     <Card.Header className='header'>
+  <Card.Img variant="top" src={movieData.ImagePath}  />
   </Card.Header>
   <Card.Body>
-    {/* <Card.Title>{movieData.Title}</Card.Title> */}
-    {/* <Card.Text>
+    <Card.Title>{movieData.Title}</Card.Title> 
+     <Card.Text>
     {movieData.Description}
-    </Card.Text> */}
-    <Button variant="primary" size="md" block onClick={() => { onMovieClick(movieData) }}>Open</Button>  
+    </Card.Text> 
+    <Link to={`/movies/${movieData._id}`}>
+        <Button variant="secondary" size="md" block>See Details</Button>
+        
+    </Link>
     </Card.Body>
 </Card>
 
-    )
+    );
 
   }
 }

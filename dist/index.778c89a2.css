@@ -1,40 +1,78 @@
 .form {
-  margin-top: 50px;
+  margin: 50px;
   align-items: center;
   justify-content: center;
   color: azure;
-  border: darkblue;
+  border: black;
+  padding: 200px;
+  background-color: lightgray;
 }
+
+.label {
+  color: cadetblue;
+}
+
+.movie-card {
+  background-color: #1E2127;
+  color: #A5ADB6;
+  border-color: #30333A;
+}
+
 .header {
   height: auto;
   width: 100%;
   cursor: pointer;
 }
-.movie-view {
-  margin: 20px 0;
-  min-height: 100vh;
+.movie-view-card {
+  margin: 30px auto;
+  height: auto;
   align-items: center;
   justify-content: center;
+  box-shadow: 2px 2px 8px #000;
+  font-size: 20px;
+  background-color: #e0e9e9;
 }
 
-.button {
-  border-radius: 5%;
-  border: cornflowerblue;
-  cursor: pointer;
+.text-muted {
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: blue;
+  font-size: 20px;
+}
+
+.body {
+  text-align: center;
+}
+.main-view {
+  background-color: #faf9f9;
+  font-size: medium;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  row-gap: 20px;
+  box-shadow: 2px 2px 8px #000;
+}
+.director-view-card {
+  box-shadow: 2px 2px 8px #000;
+  height: 100%;
+  max-width: 85vh;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+}
+.genre-view {
+  text-align: center;
+  min-height: 50vh;
   text-align: center;
   justify-content: center;
 }
 
-.label {
-  text-transform: uppercase;
-  text-decoration: underline;
-  color: blue;
-}
-.main-view {
-  color: cornflowerblue;
-  font-size: medium;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  row-gap: 20px;
+.genre-view-card {
+  box-shadow: 2px 2px 8px #000;
+  height: 100%;
+  max-width: 85vh;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+  display: block;
 }
 .my-flix {
   color: steelblue;
