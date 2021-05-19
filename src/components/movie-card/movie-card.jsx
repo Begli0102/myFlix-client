@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
       <Card className='movie-card' border="primary">
      <Card.Header className='header'>
-  <Card.Img variant="top" src={movieData.ImagePath}  />
+  <Card.Img  className=''variant="top" src={movieData.ImagePath}  />
   </Card.Header>
   <Card.Body>
     <Card.Title>{movieData.Title}</Card.Title> 

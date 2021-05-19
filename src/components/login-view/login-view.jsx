@@ -27,26 +27,40 @@ export function LoginView(props) {
       console.log('no such user')
     });
   };
+  
+  
 
   return (
-    <Card  >
+    <Card >
       
     <Form className='form'  >
+    <p >
+      {/* <Link to="/register">
+      <Button  className="register" variant="secondary" type="button">Register</Button>
+       </Link> */}
+       </p>
       
       <Form.Group controlId="formUsername">
         <Form.Label className='label'>Username:</Form.Label>
-        <Form.Control type="text" placeholder="Enter username" value={username} onChange={e => setUsername(e.target.value)} />
+        <Form.Control type="text" placeholder="Enter username" value={username} 
+        onChange={e => setUsername(e.target.value)} 
+        autoComplete="username" placeholder="Username" required
+        />
       </Form.Group>
 
       <Form.Group controlId="formPassword">
         <Form.Label className='label'>Password:</Form.Label>
-        <Form.Control type="password" placeholder="Password" value={password}  onChange={e => setPassword(e.target.value)} />
+        <Form.Control type="password" placeholder="Password" value={password}  
+        onChange={e => setPassword(e.target.value)}
+        minLength={6} autoComplete="false" required
+        />
       </Form.Group>
 
       <Form.Group controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label="Check me out" className='label'/>
   </Form.Group>
-      <Button variant="secondary" size="md " block type='submit' onClick={handleSubmit}>Submit</Button>
+      <Button variant="secondary" size="md " block type='submit' 
+      onClick={handleSubmit}>Submit</Button>
       
     </Form>
     </Card>

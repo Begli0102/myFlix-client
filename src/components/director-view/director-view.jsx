@@ -29,8 +29,7 @@ export function DirectorView(props) {
   </Modal.Body>
 
   <Modal.Footer>
-  <Button variant="secondary">Add to favourite</Button>
-    <Button variant="primary">Delete from favourite</Button>
+  
   <Link to={"/"}><Button variant="primary" size="lg" block>Back</Button></Link>
   </Modal.Footer>
 </Modal.Dialog>

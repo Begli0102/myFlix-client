@@ -1,21 +1,24 @@
 .form {
-  margin: 50px;
   align-items: center;
   justify-content: center;
   color: azure;
-  border: black;
-  padding: 200px;
-  background-color: lightgray;
+  margin: 100px;
+  min-width: 50vh;
 }
 
 .label {
   color: cadetblue;
 }
 
+.register {
+  float: right;
+}
+
 .movie-card {
   background-color: #1E2127;
-  color: #A5ADB6;
-  border-color: #30333A;
+  color: #23272c;
+  border-color: #1d1e20;
+  width: 100%;
 }
 
 .header {
@@ -44,10 +47,10 @@
   text-align: center;
 }
 .main-view {
-  background-color: #faf9f9;
   font-size: medium;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   row-gap: 20px;
+  display: flex;
   box-shadow: 2px 2px 8px #000;
 }
 .director-view-card {
@@ -74,6 +77,7 @@
   justify-content: center;
   display: block;
 }
+
 .my-flix {
   color: steelblue;
 }

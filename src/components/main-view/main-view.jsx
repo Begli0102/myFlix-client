@@ -2,9 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import Button from 'react-bootstrap/Button';
-
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+
+import {Navbar,Nav,Form,FormControl} from "react-bootstrap";
+import Container from 'react-bootstrap/Container'
 
 import './main-view.scss';
 
@@ -17,6 +20,7 @@ import  {MovieView} from '../movie-view/movie-view';
 
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
+import { ProfileView } from '../profile-view/profile-view';
 
 export class MainView extends React.Component {
 
@@ -80,28 +84,62 @@ export class MainView extends React.Component {
     localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
   }
+  
+
+//  onRegistration(register) {
+//   this.setState({
+//       register
+//   });
+//  }
 
 
-onRegistration(register) {
+onLoggedOut() {
+  localStorage.removeItem('token');
+  localStorage.removeItem('user');
   this.setState({
-      register
+    user: null
   });
+console.log("logout successful");
+  alert("You have been successfully logged out");
+  window.open("/", "_self");
 }
 
-// onLoggedOut() {
-//   localStorage.removeItem('token');
-//   localStorage.removeItem('user');
-//   this.setState({
-//     user: null
-//   });
-// }
 
 render() {
   const { movies, user } = this.state;
- 
-  return (
+  
+  
+  return (  
     <Router>
+    
+        <Navbar className='navbar' expand="lg" bg="dark" variant="dark">
+  <Navbar.Brand  className="navbar-brand">MyFlix App</Navbar.Brand>
+ 
+  <ul>
+   <Link to={`/`}>
+    <Button variant="link" className="navbar-link" bg='secondary'>Sign In</Button>
+  </Link> 
+  
+  <Link to="/register">
+      <Button  className="navbar-link" variant="link" >Register</Button>
+       </Link>
+</ul>
+   
+<ul>
+<Link to={`/`}>
+    <Button variant="link" className="navbar-link">Movies</Button>
+  </Link>
+ 
+ 
+    <Link to={`/`}>
+    <Button variant="link" className="navbar-link" onClick={() => this.onLoggedOut()}>Sign Out</Button>
+  </Link> 
+</ul>
+
+</Navbar>  
+
        <Row className="main-view justify-content-md-center">
+       
           <Route exact path="/" render={() => {
             if (!user)
              return (
@@ -119,11 +157,21 @@ render() {
           ))
         }} />
         <Route path="/register" render={() => {
+          
            if (user) return <Redirect to="/" />
-             return <Col>
+           return <Col>
               <RegistrationView />
+              </Col>
+                 }} />
+       
+        <Route exact path="/user" render={() => {
+          if (user) return <Redirect to="/" />
+                return <Col>
+                <ProfileView user={localStorage.getItem('user')}/>;
                 </Col>
-                    }} />
+              }}
+            />
+
         <Route exact path="/movies/:movieId" render={({ match, history }) => {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
@@ -154,6 +202,7 @@ render() {
                     </Col>
                      }
                     }/>
+                    
                  </Row>
            </Router>
            );
@@ -161,3 +210,4 @@ render() {
            };
 
           export default MainView;
+          

@@ -1,13 +1,21 @@
 .form {
-   margin: 50px;
+  
   //display: flex;
   align-items: center;
   justify-content: center;
   color: azure;
-  border: black;
-   padding: 200px;
-   background-color: lightgray;
+  // border: black;
+   margin: 100px;
+   min-width: 50vh;
+  //  background-color: lightgray;
 }
 .label{
   color:cadetblue;
 }
+.register{
+  float:right;
+  // margin-bottom: 50px;
+  // margin-left: 50px;
+  // padding:50px;
+}
+
