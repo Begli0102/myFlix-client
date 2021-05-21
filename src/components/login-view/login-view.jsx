@@ -34,11 +34,7 @@ export function LoginView(props) {
     <Card >
       
     <Form className='form'  >
-    <p >
-      {/* <Link to="/register">
-      <Button  className="register" variant="secondary" type="button">Register</Button>
-       </Link> */}
-       </p>
+    
       
       <Form.Group controlId="formUsername">
         <Form.Label className='label'>Username:</Form.Label>

@@ -58,16 +58,16 @@ export function RegistrationView(props) {
         autoComplete="email"
         required
         />
-        </Form.Group>
-        <Form.Group controlId='registerBirthday'>
+         </Form.Group>
+        {/* <Form.Group controlId='registerBirthday'>
         <Form.Label className='label'>Birthday:</Form.Label>
         <Form.Control type="birthday" value={birthday} 
         onChange={e => setBirthday(e.target.value)}
         autoComplete="birthday"
         placeholder="DD.MM.YEAR"
         />
-        </Form.Group>
-       
+        </Form.Group>  */}
+        
         <Button variant="secondary"   onClick={handleSubmit}>Register</Button> 
         
     </Form>
