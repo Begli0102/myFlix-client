@@ -5,30 +5,34 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-
+import { connect } from 'react-redux';
 import {Navbar,Nav,Form,FormControl} from "react-bootstrap";
 import Container from 'react-bootstrap/Container'
 
 import './main-view.scss';
 
+import { setMovies } from '../../actions/actions';  // #0
+import MoviesList from '../movies-list/movies-list';
 
 import  {LoginView} from '../login-view/login-view';
 import  {RegistrationView} from '../registration-view/registration-view';
 
-import  {MovieCard}  from '../movie-card/movie-card';
+// import  {MovieCard}  from '../movie-card/movie-card';
 import  {MovieView} from '../movie-view/movie-view';
 
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
+import { VisibilityFiterInput } from '../visibility-filter-input/visibility-filter-input';
 
-export class MainView extends React.Component {
+// #2
+class MainView extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      movies:[ ],
-      selectedMovie: null,
+      // movies:[ ],              // #3 movies state removed from here
+      // selectedMovie: null,
       user:null
     };
   }
@@ -47,10 +51,9 @@ export class MainView extends React.Component {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
-      // Assign the result to the state
-      this.setState({
-        movies: response.data
-      });
+      // #4
+      this.props.setMovies(response.data);  //..... setMovies
+      
     })
     .catch(function (error) {
       console.log(error);
@@ -106,7 +109,10 @@ console.log("logout successful");
 
 
 render() {
-  const { movies, user } = this.state;
+
+  // #5 movies is extracted from this.props rather than from the this.state
+  let { movies } = this.props;
+  let { user } = this.state;
   
   
   return (  
@@ -149,12 +155,8 @@ render() {
              )
               
       if (movies.length === 0) return <div className="main-view" />;
-        //add bootstrap
-          return movies.map(movie => (
-                 <Col md={4} key={movie._id}>
-              <MovieCard movieData={movie} />
-            </Col>
-          ))
+        // #6
+        return <MoviesList movies={movies}/>;
         }} />
         <Route path="/register" render={() => {
           
@@ -209,5 +211,8 @@ render() {
            }
            };
 
-          export default MainView;
+           // #7
+           let mapStateToProps = state => {return { movies: state.movies } }
+          // #8
+          export default connect(mapStateToProps, { setMovies } )(MainView);
           

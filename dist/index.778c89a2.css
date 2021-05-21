@@ -14,18 +14,6 @@
   float: right;
 }
 
-.movie-card {
-  background-color: #1E2127;
-  color: #23272c;
-  border-color: #1d1e20;
-  width: 100%;
-}
-
-.header {
-  height: auto;
-  width: 100%;
-  cursor: pointer;
-}
 .movie-view-card {
   margin: 30px auto;
   height: auto;
@@ -46,13 +34,6 @@
 .body {
   text-align: center;
 }
-.main-view {
-  font-size: medium;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  row-gap: 20px;
-  display: flex;
-  box-shadow: 2px 2px 8px #000;
-}
 .director-view-card {
   box-shadow: 2px 2px 8px #000;
   height: 100%;
@@ -60,6 +41,17 @@
   font-size: 20px;
   text-align: center;
   justify-content: center;
+}
+.movie-card {
+  background-color: #1E2127;
+  color: #23272c;
+  width: 100%;
+}
+
+.header {
+  height: auto;
+  width: 100%;
+  cursor: pointer;
 }
 .genre-view {
   text-align: center;
@@ -78,6 +70,13 @@
   display: block;
 }
 
+.main-view {
+  font-size: medium;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  row-gap: 20px;
+  display: flex;
+  box-shadow: 2px 2px 8px #000;
+}
 .my-flix {
   color: steelblue;
 }
