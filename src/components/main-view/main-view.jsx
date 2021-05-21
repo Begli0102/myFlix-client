@@ -11,13 +11,13 @@ import Container from 'react-bootstrap/Container'
 
 import './main-view.scss';
 
-import { setMovies } from '../../actions/actions';  // #0
-import MoviesList from '../movies-list/movies-list';
+import { setMovies } from '../../actions/actions';  //line 14-15  #0
+ import MovieList from '../movie-list/movie-list';
 
 import  {LoginView} from '../login-view/login-view';
 import  {RegistrationView} from '../registration-view/registration-view';
 
-// import  {MovieCard}  from '../movie-card/movie-card';
+import  {MovieCard}  from '../movie-card/movie-card';
 import  {MovieView} from '../movie-view/movie-view';
 
 import { DirectorView } from '../director-view/director-view';
@@ -32,17 +32,10 @@ class MainView extends React.Component {
     super();
     this.state = {
       // movies:[ ],              // #3 movies state removed from here
-      // selectedMovie: null,
+       selectedMovie: null,
       user:null
     };
   }
-
-  
-
-  // keypressCallback(event) {
-  //   console.log(event.key);
-  // }
-
 
   //using axios method to fetch movies from heroku
 
@@ -102,9 +95,7 @@ onLoggedOut() {
   this.setState({
     user: null
   });
-console.log("logout successful");
-  alert("You have been successfully logged out");
-  window.open("/", "_self");
+
 }
 
 
@@ -118,32 +109,58 @@ render() {
   return (  
     <Router>
     
-        <Navbar className='navbar' expand="lg" bg="dark" variant="dark">
-  <Navbar.Brand  className="navbar-brand">MyFlix App</Navbar.Brand>
- 
-  <ul>
-   <Link to={`/`}>
-    <Button variant="link" className="navbar-link" bg='secondary'>Sign In</Button>
-  </Link> 
-  
-  <Link to="/register">
-      <Button  className="navbar-link" variant="link" >Register</Button>
-       </Link>
-</ul>
-   
-<ul>
-<Link to={`/`}>
-    <Button variant="link" className="navbar-link">Movies</Button>
-  </Link>
- 
- 
-    <Link to={`/`}>
-    <Button variant="link" className="navbar-link" onClick={() => this.onLoggedOut()}>Sign Out</Button>
-  </Link> 
-</ul>
-
-</Navbar>  
-
+    <Navbar sticky="top"  bg="light" expand="lg">
+          <Navbar.Brand href="#home">MyFlix</Navbar.Brand>
+          {!user ? (
+            <ul>
+              <Link to={`/`}>
+                <Button
+                  variant="link"
+                  className="navbar-link"
+                >
+                  Sign In
+                  </Button>
+              </Link>
+              <Link to={`/register`}>
+                <Button
+                  variant="link"
+                  className="navbar-link"
+                >
+                  Register
+                  </Button>
+              </Link>
+            </ul>
+          ) : (
+            <ul>
+              <Link to={`/`}>
+                <Button
+                  variant="link"
+                  className="navbar-link"
+                >
+                  Movies
+                  </Button>
+              </Link>
+              <Link to={`/users/${user}`}>
+                <Button
+                  variant="link"
+                  className="navbar-link"
+                >
+                  My Account
+                  </Button>
+              </Link>
+              <Link to={`/`}>
+                <Button
+                  variant="link"
+                  className="navbar-link"
+                  onClick={() => this.onLoggedOut()}
+                >
+                  Sign Out
+                  </Button>
+              </Link>
+            </ul>
+          )}
+        </Navbar>
+<Container>
        <Row className="main-view justify-content-md-center">
        
           <Route exact path="/" render={() => {
@@ -156,7 +173,7 @@ render() {
               
       if (movies.length === 0) return <div className="main-view" />;
         // #6
-        return <MoviesList movies={movies}/>;
+        return <MovieList movies={movies}/>;
         }} />
         <Route path="/register" render={() => {
           
@@ -206,6 +223,7 @@ render() {
                     }/>
                     
                  </Row>
+                 </Container>
            </Router>
            );
            }

@@ -1,5 +1,5 @@
 .movie-card{
-  background-color: #1E2127; 
+
   color:#23272c;
   // border-color:#1d1e20;;
 width:100%;
@@ -8,4 +8,8 @@ width:100%;
   height: auto;
   width: 100%;
   cursor: pointer;
+}
+
+.card-img-top{
+  height:250px;
 }

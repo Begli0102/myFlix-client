@@ -8,23 +8,25 @@ import './movie-card.scss';
 import { Link } from "react-router-dom";
 
   export class MovieCard extends React.Component {
+
   render() {
     
     const { movieData} = this.props;
 
     return (
+      
 
       <Card className='movie-card' border="primary">
      <Card.Header className='header'>
-  <Card.Img  className=''variant="top" src={movieData.ImagePath}  />
-  </Card.Header>
+  <Card.Img  className='card-img-top' variant="top" src={movieData.ImagePath}  />
+  </Card.Header> 
   <Card.Body>
     <Card.Title>{movieData.Title}</Card.Title> 
      <Card.Text>
     {movieData.Description}
     </Card.Text> 
     <Link to={`/movies/${movieData._id}`}>
-        <Button variant="secondary" size="md" block>See Details</Button>
+        <Button variant="secondary" size="md" block>View</Button>
         
     </Link>
     </Card.Body>
@@ -35,6 +37,6 @@ import { Link } from "react-router-dom";
   }
 }
 
-MovieCard.propTypes = {
-  movieData: PropTypes.object.isRequired,
-};
+// MovieCard.propTypes = {
+//    movieData: PropTypes.object.isRequired,
+// };
