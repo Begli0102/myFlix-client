@@ -26,7 +26,7 @@ import { Link } from "react-router-dom";
     {movieData.Description}
     </Card.Text> 
     <Link to={`/movies/${movieData._id}`}>
-        <Button variant="secondary" size="md" block>View</Button>
+        <Button variant="secondary" size="md" block> View Details</Button>
         
     </Link>
     </Card.Body>

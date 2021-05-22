@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import propTypes from 'prop-Types';
+import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
