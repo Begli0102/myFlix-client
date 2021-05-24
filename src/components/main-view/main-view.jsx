@@ -231,6 +231,7 @@ render() {
 
            // #7
            let mapStateToProps = state => {return { movies: state.movies } }
+           
           // #8
           export default connect(mapStateToProps, { setMovies } )(MainView);
           
