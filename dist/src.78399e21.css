@@ -27,10 +27,6 @@
 .card-img-top {
   height: 250px;
 }
-
-.mb-2 {
-  margin-top: 20px;
-}
 .form {
   align-items: center;
   justify-content: center;
@@ -45,9 +41,6 @@
 
 .register {
   float: right;
-}
-.h1 {
-  color: black;
 }
 .movie-view-card {
   margin: 30px auto;
@@ -93,12 +86,5 @@
   justify-content: center;
   display: block;
 }
-.profile-view-card {
-  align-items: center;
-  justify-content: space-around;
-}
 
-.controlId {
-  color: aqua;
-}
-/*# sourceMappingURL=index.d22b8a02.css.map */
+/*# sourceMappingURL=/src.78399e21.css.map */

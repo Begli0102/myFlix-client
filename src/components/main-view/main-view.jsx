@@ -148,7 +148,7 @@ render() {
                   My Account
                   </Button>
               </Link>
-              <Link to={`/`}>
+              <Link to={`/register`}>
                 <Button
                   variant="link"
                   className="navbar-link"
@@ -183,13 +183,15 @@ render() {
               </Col>
                  }} />
        
-        <Route exact path="/user" render={() => {
-          if (user) return <Redirect to="/" />
-                return <Col>
-                <ProfileView user={localStorage.getItem('user')}/>;
-                </Col>
-              }}
-            />
+       <Route exact path="/users/:username" render={({ history }) => {
+            if (!user) return <Col>
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)} /></Col>
+            return <Col md={8}>
+              <ProfileView onLoggedIn={user => this.onLoggedIn(user)}
+                movies={movies} user={user}
+                onBackClick={() => history.goBack()} />
+            </Col>
+          }} />
 
         <Route exact path="/movies/:movieId" render={({ match, history }) => {
             if (!user) return <Col>

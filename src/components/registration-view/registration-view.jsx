@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { Redirect, Link } from 'react-router-dom';
+import {  FormControl } from 'react-bootstrap';
 
 import './registration-view.scss';
 
@@ -33,8 +34,10 @@ export function RegistrationView(props) {
   });
   };
 
+  
   return (
-    <Form className='form'>     
+    <Form className='form'>  
+     <h1 style={{ textAlign: "center" , color: "darkgray"}}>Registration</h1>   
       <Form.Group controlId='registerUsername'>
         <Form.Label className='label'>Username:</Form.Label>
         <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)}
@@ -59,6 +62,7 @@ export function RegistrationView(props) {
         required
         />
         </Form.Group>
+        
         {/* <Form.Group controlId='registerBirthday'>
         <Form.Label className='label'>Birthday:</Form.Label>
         <Form.Control type="birthday" value={birthday} 
