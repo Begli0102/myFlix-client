@@ -49,7 +49,7 @@ export function RegistrationView(props) {
        <Form.Label className='label'> Password:</Form.Label>
         <Form.Control type="password" placeholder="Password" value={password}
          onChange={e => setPassword(e.target.value)} 
-         minLength={6}
+         minLength={8}
          autoComplete="false"
          required
          />
@@ -71,14 +71,14 @@ export function RegistrationView(props) {
         placeholder="DD.MM.YEAR"
         />
         </Form.Group>
-        */}
+        
         <Button variant="secondary"   onClick={handleSubmit}>Register</Button> 
         
     </Form>
   );
 }
 
-RegistrationView.PropTypes = {
+// RegistrationView.PropTypes = {
     // onRegistration: PropTypes.shape({
     //   username: PropTypes.string.isRequired,
     //   password: PropTypes.string.isRequired,
