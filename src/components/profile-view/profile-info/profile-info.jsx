@@ -19,7 +19,7 @@ const ProfileInfo = ({
   const [Username, setUsername] = useState('');
   const [Password, setPassword] = useState('');
   const [Email, setEmail] = useState('');
-  // const [Birthday, setBirthday] = useState('');
+  const [Birthday, setBirthday] = useState('');
 
   const handleUpdateProfile = () => {
     setUpdateProfile(true);
@@ -46,7 +46,7 @@ const ProfileInfo = ({
 				Username,
         Password,
         Email,
-        // Birthday
+         Birthday
 			},
     })
     .then((response) => {
@@ -69,9 +69,10 @@ const ProfileInfo = ({
     
   }
 
-
+console.log(user);
   return (
-
+<>
+{user &&  
       <Form className="ProfileInfo" onSubmit={(e) => handleSaveUpdateProfile(e)}>
         <h1 className="my-5">
             My Profile
@@ -96,7 +97,7 @@ const ProfileInfo = ({
             <Form.Control 
               plaintext 
               readOnly
-              defaultValue={user}
+              defaultValue={user.Username}
             />
           }
         </Col>
@@ -123,7 +124,7 @@ const ProfileInfo = ({
               type="email" 
               plaintext 
               readOnly 
-              defaultValue={user}
+              defaultValue={user.Email}
             />
           }
         </Col>
@@ -232,6 +233,8 @@ const ProfileInfo = ({
       
       
     </Form>
+         }
+    </>
   )
 }
 

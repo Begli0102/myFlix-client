@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
     handleAdd() {
       const token = localStorage.getItem("token");
       const user = localStorage.getItem("user");
-      axios.post(`https://myflix01025.herokuapp.com/users/${user}` + "/movies/" +
+      axios.put(`https://myflix01025.herokuapp.com/users/${user}` + "/movies/" +
         this.props.movieData._id, {},
         { headers: { Authorization: `Bearer ${token}` } }
       )

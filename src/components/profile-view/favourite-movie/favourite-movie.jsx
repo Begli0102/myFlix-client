@@ -1,81 +1,82 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import Badge from 'react-bootstrap/Badge';
-import Row from 'react-bootstrap/Row';
+// import Badge from 'react-bootstrap/Badge';
+// import Row from 'react-bootstrap/Row';
 // import {PropTypes} from 'prop-types';
 
-const FavouriteMovie = ({movieData,userInfo}) => {
+const FavouriteMovie = ({ movieData, favoriteMovies }) => {
   
-  // const{movieData} = this.props;
+const RemoveFavourite =(favoriteMovies) =>{
 
-  const handleRemoveFavourite = () => {
-    const username = localStorage.getItem('user');
-    const token = localStorage.getItem('token');
-    
-    axios({
-      method: 'put',
-      url: `https://myflix-20210211.herokuapp.com/users/${username}/movies/${movieData.id}`, //id
-      
-      headers: { 
-        Authorization: `Bearer ${token}` 
-      }
+
+    let username = localStorage.getItem('user');
+    let token = localStorage.getItem('token');
+    let url= `https://myflix01025.herokuapp.com/users/${username}/movies/${favoriteMovies._id}`
+    axios.delete(url,{headers: {
+        Authorization: `Bearer ${token}`}
     })
-    .then(
-      (response) => {
-        const data = response.data;
-        console.log(data);
-        window.open(
-          `/users/${username}`,
-          '_self'
-        );
-      }
-    )
-    .catch(
-      (err) => {
-        console.log(err);
-      }
-    )
+      .then((response) => {
+          const data = response.data;
+          alert("The movie has been deleted from your favorites movie.");
+          console.log(data);
+          window.open(
+            `/users/${username}`,
+            '_self'
+          );
+        }
+      )
+      .catch(
+        (err) => {
+          console.log(err);
+        }
+      )
   }
 
 
+  
   return (
- 
-    <Card className="FavouriteMovie" >
-      <div>
-      <h1 className="h1">Favourite Movies</h1>
-
-      <Card className='favourite-movie' border="primary">
-     <Card.Header className='header'>
-     <Link to={`/movies/${movieData.id}`}>//id
-        <Card.Img
-          variant="top"
-          src={movieData.ImagePath}
-        />
-        </Link>  </Card.Header> 
-  <Card.Body>
-    <Card.Title>{movieData.Title}</Card.Title> 
-     <Card.Text>
-    {movieData.Description}
-    {movieData.Genre.Name}
-    </Card.Text> 
-    <Button
-          size="sm"
-          block
-          className="mt-auto"
-          variant="danger"
-          onClick={ handleRemoveFavourite}
-          >
-            Delete from favourites
-        </Button>
-    </Card.Body>
-</Card>
+    <div>
+      <Card className="FavouriteMovie" >
+        <div>
+          <h1 className="h1 m-3">Favourite Movies</h1>
+          <div className="card-group">
+            {
+              favoriteMovies && favoriteMovies.map((favorite) => {
+                return (
+                  <Card className='favourite-movie' key={favorite._id} className="w-50 m-3 h-50">
+                    <Card.Header className='header'>
+                      <Card.Img
+                        variant="top"
+                        src={favorite.ImagePath}
+                      />
+                    </Card.Header>
+                    <Card.Body>
+                      <Card.Title>{favorite.Title}</Card.Title>
+                      <Card.Text>
+                        {favorite.Description}
+                        {favorite.Genre.Name}
+                      </Card.Text>
+                      <Button
+                        size="sm"
+                        block
+                        className="mt-auto"
+                        variant="danger"
+                        onClick={()=>RemoveFavourite(favorite)}
+                      >
+                        Delete from favourites
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                )
+              })
+            }
+          </div>
+        </div>
+      </Card>
     </div>
-    </Card>
-    
   )
 }
-
 export default FavouriteMovie;

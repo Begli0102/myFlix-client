@@ -6,6 +6,12 @@ import axios from 'axios';
 import { Redirect, Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 
+import {  FormControl } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
+import InputGroup from 'react-bootstrap/InputGroup';
+
+
 import './login-view.scss';
 
 export function LoginView(props) {
@@ -31,39 +37,61 @@ export function LoginView(props) {
   
 
   return (
-    <Card >
-      
-    <Form className='form'  >
-    <p >
-      {/* <Link to="/register">
-      <Button  className="register" variant="secondary" type="button">Register</Button>
-       </Link> */}
-       </p>
-      
-      <Form.Group controlId="formUsername">
-        <Form.Label className='label'>Username:</Form.Label>
-        <Form.Control type="text" placeholder="Enter username" value={username} 
-        onChange={e => setUsername(e.target.value)} 
-        autoComplete="username" placeholder="Username" required
-        />
-      </Form.Group>
+    <Container className="login-view">
+    <Row >
+        <Form className="form" noValidate >
+            <Form.Group  controlId="registerUsername">
+              <h1 className='h1' style={{ textAlign: "center" , color: "darkgray"}}></h1>
+              <Form.Label className='label'>
+                Username:
+              </Form.Label>
+              <Form.Control  
+              required
+              type="text" 
+              maxLength={20}
+              minLength={5}
+              placeholder="Enter username" 
+              value={username} 
+              
+              onChange={e => setUsername(e.target.value)} />
+            <Form.Control.Feedback type="valid">
+              Welldone!
+            </Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              This field is mandatory!
+            </Form.Control.Feedback>
+          </Form.Group>
 
-      <Form.Group controlId="formPassword">
-        <Form.Label className='label'>Password:</Form.Label>
-        <Form.Control type="password" placeholder="Password" value={password}  
-        onChange={e => setPassword(e.target.value)}
-        minLength={6} autoComplete="false" required
-        />
+          {/* <InputGroup hasValidation> */}
+      <Form.Group controlId="registerPassword">
+        <Form.Label className='label'>
+        Password:
+        </Form.Label>
+        <Form.Control 
+          required 
+          type="password" 
+          placeholder="Enter your Password" 
+          maxLength={12}
+          minLength={5}
+          value={password} 
+          name="up"
+          onChange={e => setPassword(e.target.value)} />
+       <Form.Control.Feedback type="valid">
+          Welldone!
+        </Form.Control.Feedback>
+        <Form.Control.Feedback type="invalid">
+          This field is mandatory!
+        </Form.Control.Feedback>
       </Form.Group>
+      {/* </InputGroup> */}
 
-      <Form.Group controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" className='label'/>
-  </Form.Group>
-      <Button variant="secondary" size="md " block type='submit' 
-      onClick={handleSubmit}>Submit</Button>
-      
-    </Form>
-    </Card>
+     
+      <Button variant="secondary" size="md " block type='submit'  onClick={handleSubmit}>Submit</Button>
+        </Form>
+    </Row>
+
+</Container>
+
   );
 }
 

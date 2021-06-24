@@ -38,10 +38,10 @@ export function DirectorView(props) {
   }
 
   DirectorView.propTypes = {
-    directorData: PropTypes.shape({
-            Name: PropTypes.string.isRequired,
-            Bio: PropTypes.string.isRequired,
-            Birth: PropTypes.string.isRequired,
-            Death: PropTypes.string
-        })
+    // directorData: PropTypes.shape({
+    //         Name: PropTypes.string.isRequired,
+    //         Bio: PropTypes.string.isRequired,
+    //         Birth: PropTypes.string.isRequired,
+    //         Death: PropTypes.string
+    //     })
       }

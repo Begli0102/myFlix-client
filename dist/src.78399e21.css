@@ -13,8 +13,13 @@
   padding-top: 80px;
   padding-bottom: 80px;
 }
+
+.navbar-link {
+  float: right;
+}
 .movie-card {
   color: #23272c;
+  border-color: #1d1e20;
   width: 100%;
 }
 
@@ -26,6 +31,10 @@
 
 .card-img-top {
   height: 250px;
+}
+
+.mb-2 {
+  margin-top: 20px;
 }
 .form {
   align-items: center;
@@ -42,6 +51,15 @@
 .register {
   float: right;
 }
+.h1 {
+  margin-bottom: 20px;
+}
+
+.login-view {
+  align-items: center;
+  justify-content: center;
+  margin-left: 200px;
+}
 .movie-view-card {
   margin: 30px auto;
   height: auto;
@@ -49,7 +67,7 @@
   justify-content: center;
   box-shadow: 2px 2px 8px #000;
   font-size: 20px;
-  background-color: #e0e9e9;
+  background-color: rgba(245, 248, 248, 0.089);
 }
 
 .text-muted {
@@ -70,6 +88,13 @@
   text-align: center;
   justify-content: center;
 }
+
+.text-muted {
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: blue;
+  font-size: 20px;
+}
 .genre-view {
   text-align: center;
   min-height: 50vh;
@@ -85,6 +110,23 @@
   text-align: center;
   justify-content: center;
   display: block;
+}
+
+.modal-content {
+  background-color: rgba(247, 247, 252, 0.548);
+  font-size: 20px;
+}
+
+.text-muted {
+  text-align: center;
+}
+.profile-view-card {
+  align-items: center;
+  justify-content: space-around;
+}
+
+.controlId {
+  color: aqua;
 }
 
 /*# sourceMappingURL=/src.78399e21.css.map */

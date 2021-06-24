@@ -190,6 +190,7 @@ render() {
               <ProfileView onLoggedIn={user => this.onLoggedIn(user)}
                 movies={movies} user={user}
                 onBackClick={() => history.goBack()} />
+
             </Col>
           }} />
 

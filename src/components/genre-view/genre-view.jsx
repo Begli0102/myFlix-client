@@ -14,9 +14,10 @@ import './genre-view.scss';
 import { Link } from 'react-router-dom';
 
 export function GenreView(props) {
+  
     const { genre } = props;
-
-    return (<Modal.Dialog>
+   
+    return (<Modal.Dialog className='dialog'>
       
         <Modal.Body>
         <Card.Text className="text-muted">Description</Card.Text>
@@ -27,8 +28,8 @@ export function GenreView(props) {
         <Modal.Footer>
         
            
-    <Link to={"/"}>
-             <Button variant="primary" size="md" block>Back</Button>
+    <Link to={'/'}>
+             <Button variant="primary" size="" block>Back</Button>
             </Link>
         </Modal.Footer>
       </Modal.Dialog>
