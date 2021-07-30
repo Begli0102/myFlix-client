@@ -6,11 +6,9 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   row-gap: 20px;
   display: flex;
-  box-shadow: 2px 2px 8px #000;
 }
 
 .container {
-  padding-top: 80px;
   padding-bottom: 80px;
 }
 
@@ -29,10 +27,6 @@
   cursor: pointer;
 }
 
-.card-img-top {
-  height: 250px;
-}
-
 .mb-2 {
   margin-top: 20px;
 }
@@ -40,8 +34,8 @@
   align-items: center;
   justify-content: center;
   color: azure;
-  margin: 100px;
-  min-width: 50vh;
+  margin: 50 25%;
+  width: 40%;
 }
 
 .label {
@@ -50,6 +44,29 @@
 
 .register {
   float: right;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.p {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-view {
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.text-primary {
+  margin-bottom: 50px;
+}
+
+.account {
+  margin-top: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .h1 {
   margin-bottom: 20px;
@@ -59,16 +76,10 @@
   align-items: center;
   justify-content: center;
 }
-.movie-view-card {
-  margin: 30px auto;
-  height: auto;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 2px 2px 8px #000;
-  font-size: 20px;
-  background-color: rgba(245, 248, 248, 0.089);
-}
 
+.text-primary {
+  margin-bottom: 50px;
+}
 .text-muted {
   text-transform: uppercase;
   text-decoration: underline;
@@ -112,7 +123,6 @@
 }
 
 .modal-content {
-  background-color: rgba(247, 247, 252, 0.548);
   font-size: 20px;
 }
 
@@ -122,6 +132,14 @@
 .profile-view-card {
   align-items: center;
   justify-content: space-around;
+  display: flex;
+  flex-wrap: inherit;
+}
+
+.favourite-movie {
+  align-items: center;
+  display: flex;
+  flex-wrap: inherit;
 }
 
 .controlId {

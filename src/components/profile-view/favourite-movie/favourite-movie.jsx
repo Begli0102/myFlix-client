@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 // import Badge from 'react-bootstrap/Badge';
-// import Row from 'react-bootstrap/Row';
+import Row from 'react-bootstrap/Row';
 // import {PropTypes} from 'prop-types';
 
 const FavouriteMovie = ({ movieData, favoriteMovies }) => {
@@ -46,7 +46,8 @@ const RemoveFavourite =(favoriteMovies) =>{
             {
               favoriteMovies && favoriteMovies.map((favorite) => {
                 return (
-                  <Card className='favourite-movie' key={favorite._id} className="w-50 m-3 h-50">
+                  <Row className='favourite-movie' key={favorite._id} className="w-50 m-3 h-50">
+                    
                     <Card.Header className='header'>
                       <Card.Img
                         variant="top"
@@ -69,7 +70,8 @@ const RemoveFavourite =(favoriteMovies) =>{
                         Delete from favourites
                       </Button>
                     </Card.Body>
-                  </Card>
+                    
+                  </Row>
                 )
               })
             }

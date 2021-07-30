@@ -7,146 +7,159 @@ import { Link } from 'react-router-dom';
 import {  FormControl } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 import './registration-view.scss';
 
 export function RegistrationView(props) {
-  const [ username, setUsername ] = useState('');
-  const [ password, setPassword ] = useState('');
-  const [ confirmPassword, setConfirmPassword ] = useState('');
-  const [ email, setEmail ] = useState('');
-  const [ birthday, setBirthday ] = useState('');
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [birthday, setBirthday] = useState('');
+  const [usernameError, setUsernameError] = useState({});
+  const [emailError, setEmailError] = useState({});
+  const [passwordError, setPasswordError] = useState({});
+  const [confirmPasswordError, setconfirmPasswordError] = useState({});
+  const [birthdayError, setBirthdayError] = useState({});
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password,confirmPassword,email,birthday);
-  axios.post('https://myflix01025.herokuapp.com/users', {
-    Username: username,
-    Password: password,
-    Email: email,
-    Birthday: birthday
-  })
-  .then(response => {
-     const data = response.data;
-    console.log(data);
-    window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
-  })
-  .catch(e => {
-    console.log('error registering the user')
-  });
+    let setisValid = formValidation();
+    if (setisValid) {
+      axios.post('https://myflix01025.herokuapp.com/users', {
+        Username: username,
+        Password: password,
+        ConfirmPassword: confirmPassword,
+        Email: email,
+        Birthday: birthday
+      })
+        .then(response => {
+          const data = response.data;
+          console.log(data);
+          window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
+          alert("You have sucessfully registered.");
+        })
+        .catch(error => {
+          if (error.response && error.response.status === 400) {
+            setUsernameError({ usernameDuplicated: 'Username already exists.' })
+          } else {
+            alert('The value you entered is not valid.')
+          }
+        });
+       console.log(username, password, email, birthday);
+      // props.onRegister(username);
+    };
+  }
+
+  const formValidation = () => {
+    const usernameError = {};
+    const emailError = {};
+    const passwordError = {};
+    const confirmPasswordError = {};
+    const birhdayError = {};
+    let isValid = true;
+    if (username.trim().length < 6) {
+      usernameError.usernameShort = "Username must contain at least 6 letters";
+      isValid = false;
+    }
+    else if (password.trim().length < 6) {
+      passwordError.passwordMissing = "You must enter a password.(minimum 4 characters) ";
+      isValid = false;
+    }
+    else if (password !== confirmPassword) {
+      confirmPasswordError.passwordMismatch = "Your passwords do not match.";
+      isValid = false;
+    }
+    else if (!email.includes(".") || !email.includes("@")) {
+      emailError.emailNotEmail = "A valid email address is required.";
+      isValid = false;
+    }
+    else if (birthday === '') {
+      birhdayError.noBirthday = "Please enter a birthdate";
+      isValid = false;
+    }
+    setUsernameError(usernameError);
+    setEmailError(emailError);
+    setPasswordError(passwordError);
+    setconfirmPasswordError(confirmPasswordError);
+    setBirthdayError(birhdayError);
+    return isValid;
   };
-  
-  
+
+
   return (
+    <Row className="login-form justify-content-md-center">
+    <Col md={4}>
+      <Form className="login-view">
+        <h1 className="text-primary">Welcome to MyFlix!</h1>
+        <Form.Group controlId="formUsername">
+          <Form.Label>Username:</Form.Label>
+          <Form.Control type="text" value={username} placeholder='Enter Username' onChange={e => setUsername(e.target.value)} />
+          {Object.keys(usernameError).map((key) => {
+            return (
+              <div key={key} style={{ color: "red" }}>
+                {usernameError[key]}
+              </div>
+            );
+          })}
+        </Form.Group>
 
-    <Container className="login-view">
-        <Row >
-            <Form className="form" noValidate >
-                <Form.Group  controlId="registerUsername">
-                  <h1 className='h1' style={{ textAlign: "center" , color: "darkgray"}}>Registration</h1>
-                  <Form.Label className='label'>
-                    Username:
-                  </Form.Label>
-                  <Form.Control  
-                  required
-                  type="text" 
-                  maxLength={20}
-                  minLength={5}
-                  placeholder="Enter username" 
-                  value={username} 
-                  onChange={e => setUsername(e.target.value)} />
-                <Form.Control.Feedback type="valid">
-                  Welldone!
-                </Form.Control.Feedback>
-                <Form.Control.Feedback type="invalid">
-                  This field is mandatory!
-                </Form.Control.Feedback>
-              </Form.Group>
-    
-              {/* <InputGroup hasValidation> */}
-          <Form.Group controlId="registerPassword">
-            <Form.Label className='label'>
-            Password:
-            </Form.Label>
-            <Form.Control 
-              required 
-              type="password" 
-              placeholder="Enter your Password" 
-              maxLength={12}
-              minLength={5}
-              value={password} 
-              name="up"
-              onChange={e => setPassword(e.target.value)} />
-           <Form.Control.Feedback type="valid">
-              Welldone!
-            </Form.Control.Feedback>
-            <Form.Control.Feedback type="invalid">
-              This field is mandatory!
-            </Form.Control.Feedback>
-          </Form.Group>
-          {/* </InputGroup> */}
+        <Form.Group controlId="formPassword">
+          <Form.Label>Password:</Form.Label>
+          <Form.Control type="password" value={password} placeholder='Enter Password' onChange={e => setPassword(e.target.value)} />
+          {Object.keys(confirmPasswordError).map((key) => {
+            return (
+              <div key={key} style={{ color: "red" }}>
+                {confirmPasswordError[key]}
+              </div>
+            );
+          })}
+        </Form.Group>
 
-          <Form.Group controlId="registerConfirmPassword">
-          <Form.Label className='label'>
-          Confirm Password:
-          </Form.Label>
-          <Form.Control 
-              required
-              type="password" 
-              placeholder="Confirm password" 
-              value={confirmPassword} 
-              name="up2"
-              onChange={e => setConfirmPassword(e.target.value)}
-              // isValid = {confirmPassword === password}
-              />
-            <Form.Control.Feedback type="valid">
-              Welldone!
-            </Form.Control.Feedback>
-            <Form.Control.Feedback type="invalid">
-              Your password does not match!
-            </Form.Control.Feedback>
-          </Form.Group>
-    
-    
-          <Form.Group controlId="registerEmail">
-          <Form.Label className='label'>Email:</Form.Label>
-          <Form.Control
-              required type="email"
-              placeholder="example@gmail.com"
-              pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-              value={email}
-              onChange={e => setEmail(e.target.value)} />
-          <Form.Control.Feedback type="invalid" className="error form-info">
-              Please enter a valid email.
-          </Form.Control.Feedback>
-          </Form.Group>
-        
-          <Form.Group controlId="registerBirthday">
-            <Form.Label className='label'>
-                Birthday:
-            </Form.Label>
-            <Form.Control 
-            required
-            type="date" 
-            // min="1900-01-01" 
-            // max={new Date().toISOString().split('T')[0]}
-            placeholder="DD/MM/YYYY" 
-            value={birthday} 
-            onChange={e => setBirthday(e.target.value)} />
-            <Form.Control.Feedback type="valid">
-              Welldone!
-            </Form.Control.Feedback>
-            <Form.Control.Feedback type="invalid">
-              This field is mandatory too!
-            </Form.Control.Feedback>
-          </Form.Group>
-         
-          <Button variant="secondary" size="md " block  onClick={handleSubmit}>Submit</Button> 
-            </Form>
-        </Row>
-    
-    </Container>
+        <Form.Group controlId="confirmformPassword">
+          <Form.Label>Confirm Password:</Form.Label>
+          <Form.Control type="password" value={confirmPassword} placeholder='Enter Password' onChange={e => setConfirmPassword(e.target.value)} />
+          {Object.keys(passwordError).map((key) => {
+            return (
+              <div key={key} style={{ color: "red" }}>
+                {passwordError[key]}
+              </div>
+            );
+          })}
+        </Form.Group>
+
+        <Form.Group controlId="formEmail">
+          <Form.Label>Email:</Form.Label>
+          <Form.Control type="email" value={email} placeholder='Enter your Email' onChange={e => setEmail(e.target.value)} />
+          {Object.keys(emailError).map((key) => {
+            return (
+              <div key={key} style={{ color: "red" }}>
+                {emailError[key]}
+              </div>
+            );
+          })}
+        </Form.Group>
+       
+        <Form.Group controlId="formBirthdate">
+          <Form.Label>Birthdate:</Form.Label>
+          <Form.Control type="date" placeholder='MM/DD/YYYY' onChange={e => setBirthday(e.target.value)} />
+          {Object.keys(birthdayError).map((key) => {
+            return (
+              <div key={key} style={{ color: "red" }}>
+                {birthdayError[key]}
+              </div>
+            );
+          })}
+        </Form.Group>
+
+        <Button  variant="secondary" type='submit' onClick={handleSubmit} block>Submit</Button>
+      </Form>
+    </Col>
+  </Row >
+
     
       );
 }

@@ -53563,17 +53563,84 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./Accordion":"../node_modules/react-bootstrap/esm/Accordion.js","./AccordionContext":"../node_modules/react-bootstrap/esm/AccordionContext.js","./AccordionCollapse":"../node_modules/react-bootstrap/esm/AccordionCollapse.js","./AccordionToggle":"../node_modules/react-bootstrap/esm/AccordionToggle.js","./Alert":"../node_modules/react-bootstrap/esm/Alert.js","./Badge":"../node_modules/react-bootstrap/esm/Badge.js","./Breadcrumb":"../node_modules/react-bootstrap/esm/Breadcrumb.js","./BreadcrumbItem":"../node_modules/react-bootstrap/esm/BreadcrumbItem.js","./Button":"../node_modules/react-bootstrap/esm/Button.js","./ButtonGroup":"../node_modules/react-bootstrap/esm/ButtonGroup.js","./ButtonToolbar":"../node_modules/react-bootstrap/esm/ButtonToolbar.js","./Card":"../node_modules/react-bootstrap/esm/Card.js","./CardColumns":"../node_modules/react-bootstrap/esm/CardColumns.js","./CardDeck":"../node_modules/react-bootstrap/esm/CardDeck.js","./CardImg":"../node_modules/react-bootstrap/esm/CardImg.js","./CardGroup":"../node_modules/react-bootstrap/esm/CardGroup.js","./Carousel":"../node_modules/react-bootstrap/esm/Carousel.js","./CarouselItem":"../node_modules/react-bootstrap/esm/CarouselItem.js","./CloseButton":"../node_modules/react-bootstrap/esm/CloseButton.js","./Col":"../node_modules/react-bootstrap/esm/Col.js","./Collapse":"../node_modules/react-bootstrap/esm/Collapse.js","./Dropdown":"../node_modules/react-bootstrap/esm/Dropdown.js","./DropdownButton":"../node_modules/react-bootstrap/esm/DropdownButton.js","./Fade":"../node_modules/react-bootstrap/esm/Fade.js","./Form":"../node_modules/react-bootstrap/esm/Form.js","./FormControl":"../node_modules/react-bootstrap/esm/FormControl.js","./FormCheck":"../node_modules/react-bootstrap/esm/FormCheck.js","./FormFile":"../node_modules/react-bootstrap/esm/FormFile.js","./FormGroup":"../node_modules/react-bootstrap/esm/FormGroup.js","./FormLabel":"../node_modules/react-bootstrap/esm/FormLabel.js","./FormText":"../node_modules/react-bootstrap/esm/FormText.js","./Container":"../node_modules/react-bootstrap/esm/Container.js","./Image":"../node_modules/react-bootstrap/esm/Image.js","./Figure":"../node_modules/react-bootstrap/esm/Figure.js","./InputGroup":"../node_modules/react-bootstrap/esm/InputGroup.js","./Jumbotron":"../node_modules/react-bootstrap/esm/Jumbotron.js","./ListGroup":"../node_modules/react-bootstrap/esm/ListGroup.js","./ListGroupItem":"../node_modules/react-bootstrap/esm/ListGroupItem.js","./Media":"../node_modules/react-bootstrap/esm/Media.js","./Modal":"../node_modules/react-bootstrap/esm/Modal.js","./ModalBody":"../node_modules/react-bootstrap/esm/ModalBody.js","./ModalDialog":"../node_modules/react-bootstrap/esm/ModalDialog.js","./ModalFooter":"../node_modules/react-bootstrap/esm/ModalFooter.js","./ModalTitle":"../node_modules/react-bootstrap/esm/ModalTitle.js","./Nav":"../node_modules/react-bootstrap/esm/Nav.js","./Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","./NavbarBrand":"../node_modules/react-bootstrap/esm/NavbarBrand.js","./NavDropdown":"../node_modules/react-bootstrap/esm/NavDropdown.js","./NavItem":"../node_modules/react-bootstrap/esm/NavItem.js","./NavLink":"../node_modules/react-bootstrap/esm/NavLink.js","./Overlay":"../node_modules/react-bootstrap/esm/Overlay.js","./OverlayTrigger":"../node_modules/react-bootstrap/esm/OverlayTrigger.js","./PageItem":"../node_modules/react-bootstrap/esm/PageItem.js","./Pagination":"../node_modules/react-bootstrap/esm/Pagination.js","./Popover":"../node_modules/react-bootstrap/esm/Popover.js","./PopoverTitle":"../node_modules/react-bootstrap/esm/PopoverTitle.js","./PopoverContent":"../node_modules/react-bootstrap/esm/PopoverContent.js","./ProgressBar":"../node_modules/react-bootstrap/esm/ProgressBar.js","./ResponsiveEmbed":"../node_modules/react-bootstrap/esm/ResponsiveEmbed.js","./Row":"../node_modules/react-bootstrap/esm/Row.js","./SafeAnchor":"../node_modules/react-bootstrap/esm/SafeAnchor.js","./Spinner":"../node_modules/react-bootstrap/esm/Spinner.js","./SplitButton":"../node_modules/react-bootstrap/esm/SplitButton.js","./Tab":"../node_modules/react-bootstrap/esm/Tab.js","./TabContainer":"../node_modules/react-bootstrap/esm/TabContainer.js","./TabContent":"../node_modules/react-bootstrap/esm/TabContent.js","./Table":"../node_modules/react-bootstrap/esm/Table.js","./TabPane":"../node_modules/react-bootstrap/esm/TabPane.js","./Tabs":"../node_modules/react-bootstrap/esm/Tabs.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./Toast":"../node_modules/react-bootstrap/esm/Toast.js","./ToastBody":"../node_modules/react-bootstrap/esm/ToastBody.js","./ToastHeader":"../node_modules/react-bootstrap/esm/ToastHeader.js","./ToggleButton":"../node_modules/react-bootstrap/esm/ToggleButton.js","./ToggleButtonGroup":"../node_modules/react-bootstrap/esm/ToggleButtonGroup.js","./Tooltip":"../node_modules/react-bootstrap/esm/Tooltip.js"}],"components/main-view/main-view.scss":[function(require,module,exports) {
+},{"./Accordion":"../node_modules/react-bootstrap/esm/Accordion.js","./AccordionContext":"../node_modules/react-bootstrap/esm/AccordionContext.js","./AccordionCollapse":"../node_modules/react-bootstrap/esm/AccordionCollapse.js","./AccordionToggle":"../node_modules/react-bootstrap/esm/AccordionToggle.js","./Alert":"../node_modules/react-bootstrap/esm/Alert.js","./Badge":"../node_modules/react-bootstrap/esm/Badge.js","./Breadcrumb":"../node_modules/react-bootstrap/esm/Breadcrumb.js","./BreadcrumbItem":"../node_modules/react-bootstrap/esm/BreadcrumbItem.js","./Button":"../node_modules/react-bootstrap/esm/Button.js","./ButtonGroup":"../node_modules/react-bootstrap/esm/ButtonGroup.js","./ButtonToolbar":"../node_modules/react-bootstrap/esm/ButtonToolbar.js","./Card":"../node_modules/react-bootstrap/esm/Card.js","./CardColumns":"../node_modules/react-bootstrap/esm/CardColumns.js","./CardDeck":"../node_modules/react-bootstrap/esm/CardDeck.js","./CardImg":"../node_modules/react-bootstrap/esm/CardImg.js","./CardGroup":"../node_modules/react-bootstrap/esm/CardGroup.js","./Carousel":"../node_modules/react-bootstrap/esm/Carousel.js","./CarouselItem":"../node_modules/react-bootstrap/esm/CarouselItem.js","./CloseButton":"../node_modules/react-bootstrap/esm/CloseButton.js","./Col":"../node_modules/react-bootstrap/esm/Col.js","./Collapse":"../node_modules/react-bootstrap/esm/Collapse.js","./Dropdown":"../node_modules/react-bootstrap/esm/Dropdown.js","./DropdownButton":"../node_modules/react-bootstrap/esm/DropdownButton.js","./Fade":"../node_modules/react-bootstrap/esm/Fade.js","./Form":"../node_modules/react-bootstrap/esm/Form.js","./FormControl":"../node_modules/react-bootstrap/esm/FormControl.js","./FormCheck":"../node_modules/react-bootstrap/esm/FormCheck.js","./FormFile":"../node_modules/react-bootstrap/esm/FormFile.js","./FormGroup":"../node_modules/react-bootstrap/esm/FormGroup.js","./FormLabel":"../node_modules/react-bootstrap/esm/FormLabel.js","./FormText":"../node_modules/react-bootstrap/esm/FormText.js","./Container":"../node_modules/react-bootstrap/esm/Container.js","./Image":"../node_modules/react-bootstrap/esm/Image.js","./Figure":"../node_modules/react-bootstrap/esm/Figure.js","./InputGroup":"../node_modules/react-bootstrap/esm/InputGroup.js","./Jumbotron":"../node_modules/react-bootstrap/esm/Jumbotron.js","./ListGroup":"../node_modules/react-bootstrap/esm/ListGroup.js","./ListGroupItem":"../node_modules/react-bootstrap/esm/ListGroupItem.js","./Media":"../node_modules/react-bootstrap/esm/Media.js","./Modal":"../node_modules/react-bootstrap/esm/Modal.js","./ModalBody":"../node_modules/react-bootstrap/esm/ModalBody.js","./ModalDialog":"../node_modules/react-bootstrap/esm/ModalDialog.js","./ModalFooter":"../node_modules/react-bootstrap/esm/ModalFooter.js","./ModalTitle":"../node_modules/react-bootstrap/esm/ModalTitle.js","./Nav":"../node_modules/react-bootstrap/esm/Nav.js","./Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","./NavbarBrand":"../node_modules/react-bootstrap/esm/NavbarBrand.js","./NavDropdown":"../node_modules/react-bootstrap/esm/NavDropdown.js","./NavItem":"../node_modules/react-bootstrap/esm/NavItem.js","./NavLink":"../node_modules/react-bootstrap/esm/NavLink.js","./Overlay":"../node_modules/react-bootstrap/esm/Overlay.js","./OverlayTrigger":"../node_modules/react-bootstrap/esm/OverlayTrigger.js","./PageItem":"../node_modules/react-bootstrap/esm/PageItem.js","./Pagination":"../node_modules/react-bootstrap/esm/Pagination.js","./Popover":"../node_modules/react-bootstrap/esm/Popover.js","./PopoverTitle":"../node_modules/react-bootstrap/esm/PopoverTitle.js","./PopoverContent":"../node_modules/react-bootstrap/esm/PopoverContent.js","./ProgressBar":"../node_modules/react-bootstrap/esm/ProgressBar.js","./ResponsiveEmbed":"../node_modules/react-bootstrap/esm/ResponsiveEmbed.js","./Row":"../node_modules/react-bootstrap/esm/Row.js","./SafeAnchor":"../node_modules/react-bootstrap/esm/SafeAnchor.js","./Spinner":"../node_modules/react-bootstrap/esm/Spinner.js","./SplitButton":"../node_modules/react-bootstrap/esm/SplitButton.js","./Tab":"../node_modules/react-bootstrap/esm/Tab.js","./TabContainer":"../node_modules/react-bootstrap/esm/TabContainer.js","./TabContent":"../node_modules/react-bootstrap/esm/TabContent.js","./Table":"../node_modules/react-bootstrap/esm/Table.js","./TabPane":"../node_modules/react-bootstrap/esm/TabPane.js","./Tabs":"../node_modules/react-bootstrap/esm/Tabs.js","./ThemeProvider":"../node_modules/react-bootstrap/esm/ThemeProvider.js","./Toast":"../node_modules/react-bootstrap/esm/Toast.js","./ToastBody":"../node_modules/react-bootstrap/esm/ToastBody.js","./ToastHeader":"../node_modules/react-bootstrap/esm/ToastHeader.js","./ToggleButton":"../node_modules/react-bootstrap/esm/ToggleButton.js","./ToggleButtonGroup":"../node_modules/react-bootstrap/esm/ToggleButtonGroup.js","./Tooltip":"../node_modules/react-bootstrap/esm/Tooltip.js"}],"../../../../AppData/Roaming/nvm/v14.17.3/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../../../../AppData/Roaming/nvm/v14.17.3/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../../../../AppData/Roaming/nvm/v14.17.3/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/main-view/main-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../AppData/Roaming/nvm/v14.16.0/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/movie-card/movie-card.scss":[function(require,module,exports) {
+},{"_css_loader":"../../../../AppData/Roaming/nvm/v14.17.3/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/movie-card/movie-card.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../AppData/Roaming/nvm/v14.16.0/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/movie-card/movie-card.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../AppData/Roaming/nvm/v14.17.3/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/movie-card/movie-card.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -53792,7 +53859,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../AppData/Roaming/nvm/v14.16.0/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/login-view/login-view.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../AppData/Roaming/nvm/v14.17.3/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/login-view/login-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -53818,6 +53885,8 @@ var _reactBootstrap = require("react-bootstrap");
 
 var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
 
+var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
+
 var _InputGroup = _interopRequireDefault(require("react-bootstrap/InputGroup"));
 
 require("./login-view.scss");
@@ -53836,7 +53905,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
@@ -53851,87 +53920,173 @@ function LoginView(props) {
       password = _useState4[0],
       setPassword = _useState4[1];
 
+  var _useState5 = (0, _react.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      usernameError = _useState6[0],
+      setUsernameError = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      passwordError = _useState8[0],
+      setPasswordError = _useState8[1];
+
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
-    /* Send a request to the server for authentication */
+    var setisValid = formValidation();
 
-    _axios.default.post('https://myflix01025.herokuapp.com/login', {
-      Username: username,
-      Password: password
-    }).then(function (response) {
-      var data = response.data;
-      props.onLoggedIn(data);
-    }).catch(function (e) {
-      console.log('no such user');
-    });
+    if (setisValid) {
+      /* Send a request to the server for authentication */
+      _axios.default.post('https://myflix01025.herokuapp.com/login', {
+        Username: username,
+        Password: password
+      }).then(function (response) {
+        var data = response.data;
+        props.onLoggedIn(data);
+      }).catch(function (e) {
+        console.log('No such user');
+        alert("Please enter a valid username or password");
+      });
+    }
+
+    ;
   };
 
-  return /*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, {
-    className: "login-view"
-  }, /*#__PURE__*/_react.default.createElement(_Row.default, null, /*#__PURE__*/_react.default.createElement(_Form.default, {
-    className: "form",
-    noValidate: true
-  }, /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
-    controlId: "registerUsername"
-  }, /*#__PURE__*/_react.default.createElement("h1", {
-    className: "h1",
-    style: {
-      textAlign: "center",
-      color: "darkgray"
+  var formValidation = function formValidation() {
+    var usernameError = {};
+    var passwordError = {};
+    var isValid = true;
+
+    if (username.trim().length < 6) {
+      usernameError.usernameShort = "Username must be at least 6 characters";
+      isValid = false;
     }
-  }), /*#__PURE__*/_react.default.createElement(_Form.default.Label, {
-    className: "label"
-  }, "Username:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    required: true,
+
+    if (password.trim().length < 6) {
+      passwordError.passwordMissing = "Password must be at least 6 characters";
+      isValid = false;
+    }
+
+    setUsernameError(usernameError);
+    setPasswordError(passwordError);
+    return isValid;
+  };
+
+  return /*#__PURE__*/_react.default.createElement(_Row.default, {
+    className: "login-form justify-content-md-center"
+  }, /*#__PURE__*/_react.default.createElement(_Col.default, {
+    md: 4
+  }, /*#__PURE__*/_react.default.createElement(_Form.default, {
+    className: "login-view"
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "text-primary"
+  }, "Welcome to MyFlix!"), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
+    controlId: "formUsername"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Username:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
     type: "text",
-    maxLength: 20,
-    minLength: 5,
-    placeholder: "Enter username",
-    value: username,
+    placeholder: "Enter Username",
     onChange: function onChange(e) {
       return setUsername(e.target.value);
     }
-  }), /*#__PURE__*/_react.default.createElement(_Form.default.Control.Feedback, {
-    type: "valid"
-  }, "Welldone!"), /*#__PURE__*/_react.default.createElement(_Form.default.Control.Feedback, {
-    type: "invalid"
-  }, "This field is mandatory!")), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
-    controlId: "registerPassword"
-  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, {
-    className: "label"
-  }, "Password:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    required: true,
+  }), Object.keys(usernameError).map(function (key) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      key: key,
+      style: {
+        color: "red"
+      }
+    }, usernameError[key]);
+  })), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
+    controlId: "formPassword"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Password:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
     type: "password",
-    placeholder: "Enter your Password",
-    maxLength: 12,
-    minLength: 5,
-    value: password,
-    name: "up",
+    placeholder: "Enter Password",
     onChange: function onChange(e) {
       return setPassword(e.target.value);
     }
-  }), /*#__PURE__*/_react.default.createElement(_Form.default.Control.Feedback, {
-    type: "valid"
-  }, "Welldone!"), /*#__PURE__*/_react.default.createElement(_Form.default.Control.Feedback, {
-    type: "invalid"
-  }, "This field is mandatory!")), /*#__PURE__*/_react.default.createElement(_Button.default, {
-    variant: "secondary",
-    size: "md ",
-    block: true,
+  }), Object.keys(passwordError).map(function (key) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      key: key,
+      style: {
+        color: "red"
+      }
+    }, passwordError[key]);
+  })), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    variant: "primary",
     type: "submit",
+    block: true,
     onClick: handleSubmit
-  }, "Submit"))));
+  }, "Submit"), /*#__PURE__*/_react.default.createElement("div", {
+    className: "account"
+  }, /*#__PURE__*/_react.default.createElement("span", null, "Don't have an account?"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/register"
+  }, " Register"))))) //     <Container className="login-view">
+  //     <Row >
+  //       <Col md-8 col-md-6 col-12>
+  //         <Form className="form" noValidate >
+  //              <Form.Group  controlId="registerUsername">
+  //                <h1 className='h1' style={{ textAlign: "center" , color: "darkgray"}}></h1>
+  //                <Form.Label className='label'>
+  //                  Username:
+  //                </Form.Label>
+  //                <Form.Control  
+  //               required
+  //               type="text" 
+  //               maxLength={20}
+  //               minLength={5}
+  //               placeholder="Enter username" 
+  //               value={username} 
+  //               onChange={e => setUsername(e.target.value)} />
+  //             <Form.Control.Feedback type="valid">
+  //               Welldone!
+  //             </Form.Control.Feedback>
+  //             <Form.Control.Feedback type="invalid">
+  //               This field is mandatory!
+  //             </Form.Control.Feedback>
+  //           </Form.Group>
+  //        <Form.Group controlId="registerPassword">
+  //          <Form.Label className='label'>
+  //          Password:
+  //          </Form.Label>
+  //          <Form.Control 
+  //           required 
+  //           type="password" 
+  //           placeholder="Enter your Password" 
+  //           maxLength={12}
+  //           minLength={5}
+  //           value={password} 
+  //           name="up"
+  //           onChange={e => setPassword(e.target.value)} />
+  //        <Form.Control.Feedback type="valid">
+  //           Welldone!
+  //         </Form.Control.Feedback>
+  //         <Form.Control.Feedback type="invalid">
+  //           This field is mandatory!
+  //         </Form.Control.Feedback>
+  //       </Form.Group>
+  //       <Button variant="secondary" size="md " block type='submit'  onClick={handleSubmit}>Submit</Button>
+  //          </Form>
+  //          </Col>
+  //      </Row>
+  //      <Container className="mt-4">
+  //              <Row className="d-flex align-items-center justify-content-center">
+  //                <span>Don't have an account?</span>
+  //                <Link to={`/register`}>
+  //                  <Button variant="link" className="sign-up-link btn-lg" type="submit">Sign up</Button>
+  //                </Link>
+  //             </Row>
+  //            </Container>
+  //  </Container>
+  ;
 }
 
 LoginView.propTypes = {
   onLoggedIn: _propTypes.default.func
 };
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap":"../node_modules/react-bootstrap/esm/index.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/InputGroup":"../node_modules/react-bootstrap/esm/InputGroup.js","./login-view.scss":"components/login-view/login-view.scss"}],"components/registration-view/registration-view.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap":"../node_modules/react-bootstrap/esm/index.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/InputGroup":"../node_modules/react-bootstrap/esm/InputGroup.js","./login-view.scss":"components/login-view/login-view.scss"}],"components/registration-view/registration-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../AppData/Roaming/nvm/v14.16.0/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/registration-view/registration-view.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../AppData/Roaming/nvm/v14.17.3/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/registration-view/registration-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -53955,6 +54110,8 @@ var _reactBootstrap = require("react-bootstrap");
 
 var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
 
+var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
+
 var _InputGroup = _interopRequireDefault(require("react-bootstrap/InputGroup"));
 
 require("./registration-view.scss");
@@ -53975,7 +54132,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]); if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
@@ -53987,147 +54144,207 @@ function RegistrationView(props) {
 
   var _useState3 = (0, _react.useState)(''),
       _useState4 = _slicedToArray(_useState3, 2),
-      password = _useState4[0],
-      setPassword = _useState4[1];
+      email = _useState4[0],
+      setEmail = _useState4[1];
 
   var _useState5 = (0, _react.useState)(''),
       _useState6 = _slicedToArray(_useState5, 2),
-      confirmPassword = _useState6[0],
-      setConfirmPassword = _useState6[1];
+      password = _useState6[0],
+      setPassword = _useState6[1];
 
   var _useState7 = (0, _react.useState)(''),
       _useState8 = _slicedToArray(_useState7, 2),
-      email = _useState8[0],
-      setEmail = _useState8[1];
+      confirmPassword = _useState8[0],
+      setConfirmPassword = _useState8[1];
 
   var _useState9 = (0, _react.useState)(''),
       _useState10 = _slicedToArray(_useState9, 2),
       birthday = _useState10[0],
       setBirthday = _useState10[1];
 
+  var _useState11 = (0, _react.useState)({}),
+      _useState12 = _slicedToArray(_useState11, 2),
+      usernameError = _useState12[0],
+      setUsernameError = _useState12[1];
+
+  var _useState13 = (0, _react.useState)({}),
+      _useState14 = _slicedToArray(_useState13, 2),
+      emailError = _useState14[0],
+      setEmailError = _useState14[1];
+
+  var _useState15 = (0, _react.useState)({}),
+      _useState16 = _slicedToArray(_useState15, 2),
+      passwordError = _useState16[0],
+      setPasswordError = _useState16[1];
+
+  var _useState17 = (0, _react.useState)({}),
+      _useState18 = _slicedToArray(_useState17, 2),
+      confirmPasswordError = _useState18[0],
+      setconfirmPasswordError = _useState18[1];
+
+  var _useState19 = (0, _react.useState)({}),
+      _useState20 = _slicedToArray(_useState19, 2),
+      birthdayError = _useState20[0],
+      setBirthdayError = _useState20[1];
+
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
-    console.log(username, password, confirmPassword, email, birthday);
+    var setisValid = formValidation();
 
-    _axios.default.post('https://myflix01025.herokuapp.com/users', {
-      Username: username,
-      Password: password,
-      Email: email,
-      Birthday: birthday
-    }).then(function (response) {
-      var data = response.data;
-      console.log(data);
-      window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
-    }).catch(function (e) {
-      console.log('error registering the user');
-    });
+    if (setisValid) {
+      _axios.default.post('https://myflix01025.herokuapp.com/users', {
+        Username: username,
+        Password: password,
+        ConfirmPassword: confirmPassword,
+        Email: email,
+        Birthday: birthday
+      }).then(function (response) {
+        var data = response.data;
+        console.log(data);
+        window.open('/', '_self'); // the second argument '_self' is necessary so that the page will open in the current tab
+
+        alert("You have sucessfully registered.");
+      }).catch(function (error) {
+        if (error.response && error.response.status === 400) {
+          setUsernameError({
+            usernameDuplicated: 'Username already exists.'
+          });
+        } else {
+          alert('The value you entered is not valid.');
+        }
+      });
+
+      console.log(username, password, email, birthday); // props.onRegister(username);
+    }
+
+    ;
   };
 
-  return /*#__PURE__*/_react.default.createElement(_reactBootstrap.Container, {
-    className: "login-view"
-  }, /*#__PURE__*/_react.default.createElement(_Row.default, null, /*#__PURE__*/_react.default.createElement(_Form.default, {
-    className: "form",
-    noValidate: true
-  }, /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
-    controlId: "registerUsername"
-  }, /*#__PURE__*/_react.default.createElement("h1", {
-    className: "h1",
-    style: {
-      textAlign: "center",
-      color: "darkgray"
+  var formValidation = function formValidation() {
+    var usernameError = {};
+    var emailError = {};
+    var passwordError = {};
+    var confirmPasswordError = {};
+    var birhdayError = {};
+    var isValid = true;
+
+    if (username.trim().length < 6) {
+      usernameError.usernameShort = "Username must contain at least 6 letters";
+      isValid = false;
+    } else if (password.trim().length < 6) {
+      passwordError.passwordMissing = "You must enter a password.(minimum 4 characters) ";
+      isValid = false;
+    } else if (password !== confirmPassword) {
+      confirmPasswordError.passwordMismatch = "Your passwords do not match.";
+      isValid = false;
+    } else if (!email.includes(".") || !email.includes("@")) {
+      emailError.emailNotEmail = "A valid email address is required.";
+      isValid = false;
+    } else if (birthday === '') {
+      birhdayError.noBirthday = "Please enter a birthdate";
+      isValid = false;
     }
-  }, "Registration"), /*#__PURE__*/_react.default.createElement(_Form.default.Label, {
-    className: "label"
-  }, "Username:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    required: true,
+
+    setUsernameError(usernameError);
+    setEmailError(emailError);
+    setPasswordError(passwordError);
+    setconfirmPasswordError(confirmPasswordError);
+    setBirthdayError(birhdayError);
+    return isValid;
+  };
+
+  return /*#__PURE__*/_react.default.createElement(_Row.default, {
+    className: "login-form justify-content-md-center"
+  }, /*#__PURE__*/_react.default.createElement(_Col.default, {
+    md: 4
+  }, /*#__PURE__*/_react.default.createElement(_Form.default, {
+    className: "login-view"
+  }, /*#__PURE__*/_react.default.createElement("h1", {
+    className: "text-primary"
+  }, "Welcome to MyFlix!"), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
+    controlId: "formUsername"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Username:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
     type: "text",
-    maxLength: 20,
-    minLength: 5,
-    placeholder: "Enter username",
     value: username,
+    placeholder: "Enter Username",
     onChange: function onChange(e) {
       return setUsername(e.target.value);
     }
-  }), /*#__PURE__*/_react.default.createElement(_Form.default.Control.Feedback, {
-    type: "valid"
-  }, "Welldone!"), /*#__PURE__*/_react.default.createElement(_Form.default.Control.Feedback, {
-    type: "invalid"
-  }, "This field is mandatory!")), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
-    controlId: "registerPassword"
-  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, {
-    className: "label"
-  }, "Password:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    required: true,
+  }), Object.keys(usernameError).map(function (key) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      key: key,
+      style: {
+        color: "red"
+      }
+    }, usernameError[key]);
+  })), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
+    controlId: "formPassword"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Password:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
     type: "password",
-    placeholder: "Enter your Password",
-    maxLength: 12,
-    minLength: 5,
     value: password,
-    name: "up",
+    placeholder: "Enter Password",
     onChange: function onChange(e) {
       return setPassword(e.target.value);
     }
-  }), /*#__PURE__*/_react.default.createElement(_Form.default.Control.Feedback, {
-    type: "valid"
-  }, "Welldone!"), /*#__PURE__*/_react.default.createElement(_Form.default.Control.Feedback, {
-    type: "invalid"
-  }, "This field is mandatory!")), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
-    controlId: "registerConfirmPassword"
-  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, {
-    className: "label"
-  }, "Confirm Password:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    required: true,
+  }), Object.keys(confirmPasswordError).map(function (key) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      key: key,
+      style: {
+        color: "red"
+      }
+    }, confirmPasswordError[key]);
+  })), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
+    controlId: "confirmformPassword"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Confirm Password:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
     type: "password",
-    placeholder: "Confirm password",
     value: confirmPassword,
-    name: "up2",
+    placeholder: "Enter Password",
     onChange: function onChange(e) {
       return setConfirmPassword(e.target.value);
-    } // isValid = {confirmPassword === password}
-
-  }), /*#__PURE__*/_react.default.createElement(_Form.default.Control.Feedback, {
-    type: "valid"
-  }, "Welldone!"), /*#__PURE__*/_react.default.createElement(_Form.default.Control.Feedback, {
-    type: "invalid"
-  }, "Your password does not match!")), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
-    controlId: "registerEmail"
-  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, {
-    className: "label"
-  }, "Email:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    required: true,
+    }
+  }), Object.keys(passwordError).map(function (key) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      key: key,
+      style: {
+        color: "red"
+      }
+    }, passwordError[key]);
+  })), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
+    controlId: "formEmail"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Email:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
     type: "email",
-    placeholder: "example@gmail.com",
-    pattern: "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$",
     value: email,
+    placeholder: "Enter your Email",
     onChange: function onChange(e) {
       return setEmail(e.target.value);
     }
-  }), /*#__PURE__*/_react.default.createElement(_Form.default.Control.Feedback, {
-    type: "invalid",
-    className: "error form-info"
-  }, "Please enter a valid email.")), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
-    controlId: "registerBirthday"
-  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, {
-    className: "label"
-  }, "Birthday:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
-    required: true,
-    type: "date" // min="1900-01-01" 
-    // max={new Date().toISOString().split('T')[0]}
-    ,
-    placeholder: "DD/MM/YYYY",
-    value: birthday,
+  }), Object.keys(emailError).map(function (key) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      key: key,
+      style: {
+        color: "red"
+      }
+    }, emailError[key]);
+  })), /*#__PURE__*/_react.default.createElement(_Form.default.Group, {
+    controlId: "formBirthdate"
+  }, /*#__PURE__*/_react.default.createElement(_Form.default.Label, null, "Birthdate:"), /*#__PURE__*/_react.default.createElement(_Form.default.Control, {
+    type: "date",
+    placeholder: "MM/DD/YYYY",
     onChange: function onChange(e) {
       return setBirthday(e.target.value);
     }
-  }), /*#__PURE__*/_react.default.createElement(_Form.default.Control.Feedback, {
-    type: "valid"
-  }, "Welldone!"), /*#__PURE__*/_react.default.createElement(_Form.default.Control.Feedback, {
-    type: "invalid"
-  }, "This field is mandatory too!")), /*#__PURE__*/_react.default.createElement(_Button.default, {
+  }), Object.keys(birthdayError).map(function (key) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      key: key,
+      style: {
+        color: "red"
+      }
+    }, birthdayError[key]);
+  })), /*#__PURE__*/_react.default.createElement(_Button.default, {
     variant: "secondary",
-    size: "md ",
-    block: true,
-    onClick: handleSubmit
+    type: "submit",
+    onClick: handleSubmit,
+    block: true
   }, "Submit"))));
 }
 
@@ -54140,12 +54357,12 @@ RegistrationView.PropTypes = _defineProperty({
     birthday: _propTypes.default.string.isRequired
   })
 }, "onRegistration", _propTypes.default.func.isRequired);
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap":"../node_modules/react-bootstrap/esm/index.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/InputGroup":"../node_modules/react-bootstrap/esm/InputGroup.js","./registration-view.scss":"components/registration-view/registration-view.scss"}],"components/movie-view/movie-view.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap":"../node_modules/react-bootstrap/esm/index.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/InputGroup":"../node_modules/react-bootstrap/esm/InputGroup.js","./registration-view.scss":"components/registration-view/registration-view.scss"}],"components/movie-view/movie-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../AppData/Roaming/nvm/v14.16.0/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/movie-view/movie-view.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../AppData/Roaming/nvm/v14.17.3/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/movie-view/movie-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -54328,7 +54545,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../AppData/Roaming/nvm/v14.16.0/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/genre-view/genre-view.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../AppData/Roaming/nvm/v14.17.3/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/genre-view/genre-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -54576,6 +54793,8 @@ var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
 
 var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
 
+var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -54584,8 +54803,6 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-// import Badge from 'react-bootstrap/Badge';
-// import Row from 'react-bootstrap/Row';
 // import {PropTypes} from 'prop-types';
 var FavouriteMovie = function FavouriteMovie(_ref) {
   var movieData = _ref.movieData,
@@ -54617,7 +54834,7 @@ var FavouriteMovie = function FavouriteMovie(_ref) {
   }, "Favourite Movies"), /*#__PURE__*/_react.default.createElement("div", {
     className: "card-group"
   }, favoriteMovies && favoriteMovies.map(function (favorite) {
-    return /*#__PURE__*/_react.default.createElement(_Card.default, _defineProperty({
+    return /*#__PURE__*/_react.default.createElement(_Row.default, _defineProperty({
       className: "favourite-movie",
       key: favorite._id
     }, "className", "w-50 m-3 h-50"), /*#__PURE__*/_react.default.createElement(_Card.default.Header, {
@@ -54639,12 +54856,12 @@ var FavouriteMovie = function FavouriteMovie(_ref) {
 
 var _default = FavouriteMovie;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js"}],"components/profile-view/profile-view.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js"}],"components/profile-view/profile-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../AppData/Roaming/nvm/v14.16.0/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/profile-view/profile-view.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../AppData/Roaming/nvm/v14.17.3/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/profile-view/profile-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -54939,12 +55156,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement(_Button.default, {
         variant: "link",
         className: "navbar-link"
-      }, "Sign In")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-        to: "/register"
-      }, /*#__PURE__*/_react.default.createElement(_Button.default, {
-        variant: "link",
-        className: "navbar-link"
-      }, "Register"))) : /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      }, "Sign In"))) : /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
         to: "/"
       }, /*#__PURE__*/_react.default.createElement(_Button.default, {
         variant: "link",
@@ -55184,7 +55396,7 @@ var MyFlixApplication = /*#__PURE__*/function (_React$Component) {
 var container = document.getElementsByClassName('app-container')[0]; // Tells React to render your app in the root DOM element
 
 _reactDom.default.render(_react.default.createElement(MyFlixApplication), container);
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","redux":"../node_modules/redux/es/redux.js","react-redux":"../node_modules/react-redux/es/index.js","./reducers/reducers":"reducers/reducers.js","redux-devtools-extension":"../node_modules/redux-devtools-extension/index.js","./index.scss":"index.scss","./components/main-view/main-view":"components/main-view/main-view.jsx"}],"../../../../AppData/Roaming/nvm/v14.16.0/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","redux":"../node_modules/redux/es/redux.js","react-redux":"../node_modules/react-redux/es/index.js","./reducers/reducers":"reducers/reducers.js","redux-devtools-extension":"../node_modules/redux-devtools-extension/index.js","./index.scss":"index.scss","./components/main-view/main-view":"components/main-view/main-view.jsx"}],"../../../../AppData/Roaming/nvm/v14.17.3/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -55212,7 +55424,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54201" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51909" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -55388,5 +55600,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../AppData/Roaming/nvm/v14.16.0/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.jsx"], null)
+},{}]},{},["../../../../AppData/Roaming/nvm/v14.17.3/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.jsx"], null)
 //# sourceMappingURL=/src.78399e21.js.map

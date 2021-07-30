@@ -3,13 +3,14 @@
   font-size:medium;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   row-gap: 20px;
-    display:flex;
-   box-shadow: 2px 2px 8px #000;
+  display:flex;
+  // flex-wrap:inherit;
+  //  box-shadow: 2px 2px 8px #000;
    
 }
 
 .container {
-   padding-top: 80px;
+//   margin-left: 100px;
    padding-bottom:80px;
  }
 .navbar-link{

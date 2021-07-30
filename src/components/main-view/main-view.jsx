@@ -111,7 +111,8 @@ render() {
     
     <Navbar sticky="top"  bg="light" expand="lg">
           <Navbar.Brand href="#home">MyFlix</Navbar.Brand>
-          {!user ? (
+          {!user ? 
+          (
             <ul>
               <Link to={`/`}>
                 <Button
@@ -121,14 +122,14 @@ render() {
                   Sign In
                   </Button>
               </Link>
-              <Link to={`/register`}>
+              {/* <Link to={`/register`}>
                 <Button
                   variant="link"
                   className="navbar-link"
                 >
                   Register
                   </Button>
-              </Link>
+              </Link> */}
             </ul>
           ) : (
             <ul>
@@ -161,7 +162,7 @@ render() {
           )}
         </Navbar>
 <Container>
-       <Row className="main-view justify-content-md-center">
+       <Row className="main-view justify-content-md-center" >
        
           <Route exact path="/" render={() => {
             if (!user)
