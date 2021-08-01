@@ -1,0 +1,149 @@
+.my-flix {
+  color: steelblue;
+}
+.main-view {
+  font-size: medium;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  row-gap: 20px;
+  display: flex;
+}
+
+.container {
+  padding-bottom: 80px;
+}
+
+.navbar-link {
+  float: right;
+}
+.movie-card {
+  color: #23272c;
+  border-color: #1d1e20;
+  width: 100%;
+}
+
+.header {
+  height: auto;
+  width: 100%;
+  cursor: pointer;
+}
+
+.mb-2 {
+  margin-top: 20px;
+}
+.form {
+  align-items: center;
+  justify-content: center;
+  color: azure;
+  margin: 50 25%;
+  width: 40%;
+}
+
+.label {
+  color: cadetblue;
+}
+
+.register {
+  float: right;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.p {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-view {
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.text-primary {
+  margin-bottom: 50px;
+}
+
+.account {
+  margin-top: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.h1 {
+  margin-bottom: 20px;
+}
+
+.login-view {
+  align-items: center;
+  justify-content: center;
+}
+
+.text-primary {
+  margin-bottom: 50px;
+}
+.text-muted {
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: blue;
+  font-size: 20px;
+}
+
+.body {
+  text-align: center;
+}
+.director-view-card {
+  box-shadow: 2px 2px 8px #000;
+  height: 100%;
+  max-width: 85vh;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+.text-muted {
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: blue;
+  font-size: 20px;
+}
+.genre-view {
+  text-align: center;
+  min-height: 50vh;
+  text-align: center;
+  justify-content: center;
+}
+
+.genre-view-card {
+  box-shadow: 2px 2px 8px #000;
+  height: 100%;
+  max-width: 85vh;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+  display: block;
+}
+
+.modal-content {
+  font-size: 20px;
+}
+
+.text-muted {
+  text-align: center;
+}
+.profile-view-card {
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: inherit;
+}
+
+.favourite-movie {
+  align-items: center;
+  display: flex;
+  flex-wrap: inherit;
+}
+
+.controlId {
+  color: aqua;
+}
+
+/*# sourceMappingURL=/src.78399e21.css.map */
