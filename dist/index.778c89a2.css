@@ -1,0 +1,91 @@
+.form {
+  align-items: center;
+  justify-content: center;
+  color: azure;
+  margin: 100px;
+  min-width: 50vh;
+}
+
+.label {
+  color: cadetblue;
+}
+
+.register {
+  float: right;
+}
+
+.movie-view-card {
+  margin: 30px auto;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 8px #000;
+  font-size: 20px;
+  background-color: #e0e9e9;
+}
+
+.text-muted {
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: blue;
+  font-size: 20px;
+}
+
+.body {
+  text-align: center;
+}
+.director-view-card {
+  box-shadow: 2px 2px 8px #000;
+  height: 100%;
+  max-width: 85vh;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+}
+.movie-card {
+  color: #23272c;
+  width: 100%;
+}
+
+.header {
+  height: auto;
+  width: 100%;
+  cursor: pointer;
+}
+
+.card-img-top {
+  height: 250px;
+}
+.genre-view {
+  text-align: center;
+  min-height: 50vh;
+  text-align: center;
+  justify-content: center;
+}
+
+.genre-view-card {
+  box-shadow: 2px 2px 8px #000;
+  height: 100%;
+  max-width: 85vh;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+  display: block;
+}
+
+.main-view {
+  font-size: medium;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  row-gap: 20px;
+  display: flex;
+  box-shadow: 2px 2px 8px #000;
+}
+
+.container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.778c89a2.css.map */
