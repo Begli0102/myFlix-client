@@ -54372,7 +54372,9 @@ var MovieView = /*#__PURE__*/function (_React$Component) {
         alt: movieData.Title
       })), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Body, {
         className: "body"
-      }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Title, null, movieData.Title), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Text, {
+      }, /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Title, {
+        className: "title"
+      }, movieData.Title), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Text, {
         className: "text-muted"
       }, "Description :"), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Text, null, movieData.Description), /*#__PURE__*/_react.default.createElement(_reactBootstrap.Card.Text, {
         className: "text-muted"
@@ -54455,9 +54457,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function DirectorView(props) {
   var directorData = props.directorData;
-  return /*#__PURE__*/_react.default.createElement(_Modal.default.Dialog, null, /*#__PURE__*/_react.default.createElement(_Modal.default.Header, null, /*#__PURE__*/_react.default.createElement(_Modal.default.Title, null, directorData.Director.Name)), /*#__PURE__*/_react.default.createElement(_Modal.default.Body, null, /*#__PURE__*/_react.default.createElement(_Card.default.Text, {
+  return /*#__PURE__*/_react.default.createElement(_Modal.default.Dialog, {
+    className: "director"
+  }, /*#__PURE__*/_react.default.createElement(_Modal.default.Header, null, /*#__PURE__*/_react.default.createElement(_Modal.default.Title, {
+    className: "title"
+  }, directorData.Director.Name)), /*#__PURE__*/_react.default.createElement(_Modal.default.Body, null, /*#__PURE__*/_react.default.createElement(_Card.default.Text, {
     className: "text-muted"
-  }, "Bio of a Director"), /*#__PURE__*/_react.default.createElement("p", null, directorData.Director.Bio), /*#__PURE__*/_react.default.createElement("p", null, 'Born in: ', " ", new Date(directorData.Director.Birth).toLocaleDateString()), /*#__PURE__*/_react.default.createElement("p", null, 'Died in: ', directorData.Director.Death ? new Date(directorData.Director.Death).toLocaleDateString() : '-')), /*#__PURE__*/_react.default.createElement(_Modal.default.Footer, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, "Bio of a Director:"), /*#__PURE__*/_react.default.createElement("p", null, directorData.Director.Bio), /*#__PURE__*/_react.default.createElement("p", null, 'Born in: ', " ", new Date(directorData.Director.Birth).toLocaleDateString()), /*#__PURE__*/_react.default.createElement("p", null, 'Died in: ', directorData.Director.Death ? new Date(directorData.Director.Death).toLocaleDateString() : '-')), /*#__PURE__*/_react.default.createElement(_Modal.default.Footer, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, /*#__PURE__*/_react.default.createElement(_Button.default, {
     variant: "primary",
@@ -54512,11 +54518,13 @@ function GenreView(props) {
     className: "dialog"
   }, /*#__PURE__*/_react.default.createElement(_Modal.default.Body, null, /*#__PURE__*/_react.default.createElement(_Card.default.Text, {
     className: "text-muted"
-  }, "Description"), /*#__PURE__*/_react.default.createElement("p", null, genre.Genre.Name), /*#__PURE__*/_react.default.createElement("p", null, genre.Genre.Description)), /*#__PURE__*/_react.default.createElement(_Modal.default.Footer, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, "DESCRIPTION:"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "title"
+  }, genre.Genre.Name), /*#__PURE__*/_react.default.createElement("p", null, genre.Genre.Description)), /*#__PURE__*/_react.default.createElement(_Modal.default.Footer, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: '/'
   }, /*#__PURE__*/_react.default.createElement(_Button.default, {
     variant: "primary",
-    size: "",
+    size: "md",
     block: true
   }, "Back"))));
 }
@@ -54760,9 +54768,12 @@ var FavouriteMovie = function FavouriteMovie(_ref) {
     });
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Card.default, {
+  return /*#__PURE__*/_react.default.createElement(_Card.default, {
     className: "FavouriteMovie"
-  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    "col-sm-6": true,
+    "bg-success": true
+  }, /*#__PURE__*/_react.default.createElement("h1", {
     className: "h1 m-3"
   }, "Favourite Movies"), /*#__PURE__*/_react.default.createElement("div", {
     className: "card-group"
@@ -54775,7 +54786,9 @@ var FavouriteMovie = function FavouriteMovie(_ref) {
     }, /*#__PURE__*/_react.default.createElement(_Card.default.Img, {
       variant: "top",
       src: favorite.ImagePath
-    })), /*#__PURE__*/_react.default.createElement(_Card.default.Body, null, /*#__PURE__*/_react.default.createElement(_Card.default.Title, null, favorite.Title), /*#__PURE__*/_react.default.createElement(_Card.default.Text, null, favorite.Description, favorite.Genre.Name), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    })), /*#__PURE__*/_react.default.createElement(_Card.default.Body, null, /*#__PURE__*/_react.default.createElement(_Card.default.Title, {
+      className: "title"
+    }, favorite.Title), /*#__PURE__*/_react.default.createElement(_Card.default.Text, null, favorite.Description, favorite.Genre.Name), /*#__PURE__*/_react.default.createElement(_Button.default, {
       size: "sm",
       block: true,
       className: "mt-auto",
@@ -54784,7 +54797,7 @@ var FavouriteMovie = function FavouriteMovie(_ref) {
         return RemoveFavourite(favorite);
       }
     }, "Delete from favourites")));
-  })))));
+  }))));
 };
 
 var _default = FavouriteMovie;
@@ -55357,7 +55370,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61278" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49198" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

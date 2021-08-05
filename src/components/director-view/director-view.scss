@@ -1,15 +1,9 @@
-.director-view-card{
-  box-shadow: 2px 2px 8px #000;
-     height: 100%;
+.director{
+   box-shadow: 2px 2px 8px #000;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     max-width: 85vh;
     font-size: 20px;
-    text-align: center;
-    justify-content: center;
-   
+    // text-align: center;
+    // justify-content: center;
+  
 }
-.text-muted{
-  text-transform: uppercase;
-  text-decoration: underline;
-   color: blue;
-   font-size: 20px;
- }

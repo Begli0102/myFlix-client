@@ -16,13 +16,13 @@ export function DirectorView(props) {
   const { directorData } = props;
 
   return (
-    <Modal.Dialog>
+    <Modal.Dialog className='director'>
   <Modal.Header>
-    <Modal.Title>{ directorData.Director.Name }</Modal.Title>
+    <Modal.Title className='title'>{ directorData.Director.Name }</Modal.Title>
   </Modal.Header>
 
   <Modal.Body>
-  <Card.Text className="text-muted">Bio of a Director</Card.Text>
+  <Card.Text className="text-muted">Bio of a Director:</Card.Text>
     <p>{directorData.Director.Bio }</p>
     <p>{'Born in: '} { new Date(directorData.Director.Birth).toLocaleDateString() }</p>
     <p>{'Died in: '}{(directorData.Director.Death) ? new Date(directorData.Director.Death).toLocaleDateString() : '-' }</p>

@@ -38,9 +38,9 @@ const RemoveFavourite =(favoriteMovies) =>{
 
   
   return (
-    <div>
+    
       <Card className="FavouriteMovie" >
-        <div>
+        <div col-sm-6 bg-success>
           <h1 className="h1 m-3">Favourite Movies</h1>
           <div className="card-group">
             {
@@ -55,7 +55,7 @@ const RemoveFavourite =(favoriteMovies) =>{
                       />
                     </Card.Header>
                     <Card.Body>
-                      <Card.Title>{favorite.Title}</Card.Title>
+                      <Card.Title className='title'>{favorite.Title}</Card.Title>
                       <Card.Text>
                         {favorite.Description}
                         {favorite.Genre.Name}
@@ -78,7 +78,7 @@ const RemoveFavourite =(favoriteMovies) =>{
           </div>
         </div>
       </Card>
-    </div>
+   
   )
 }
 export default FavouriteMovie;

@@ -6,15 +6,13 @@ text-align: center;
 justify-content: center;
 }
 
-.genre-view-card{
-   box-shadow: 2px 2px 8px #000;
-    height: 100%;
-    max-width: 85vh;
-    font-size: 20px;
-    text-align: center;
-    justify-content: center;
-    display: block;
-    
+.dialog{
+    box-shadow: 2px 2px 8px #000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     max-width: 85vh;
+     font-size: 20px;
+    margin-top: 100px;
+    background-color: rgb(252, 251, 251);
 }
 .modal-content{
     

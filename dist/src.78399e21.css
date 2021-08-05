@@ -15,12 +15,6 @@
 .navbar-link {
   float: right;
 }
-.movie-card {
-  color: #23272c;
-  border-color: #1d1e20;
-  width: 100%;
-}
-
 .header {
   height: auto;
   width: 100%;
@@ -80,29 +74,42 @@
 .text-primary {
   margin-bottom: 50px;
 }
+.movie-view-card {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  box-shadow: 2px 2px 8px #000;
+  display: inline-flex;
+  background-color: #fcfbfb;
+  flex-direction: row;
+  margin-top: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 2%;
+}
+
 .text-muted {
-  text-transform: uppercase;
   text-decoration: underline;
-  color: blue;
   font-size: 20px;
 }
 
 .body {
   text-align: center;
 }
-.director-view-card {
-  box-shadow: 2px 2px 8px #000;
-  height: 100%;
-  max-width: 85vh;
-  font-size: 20px;
-  text-align: center;
-  justify-content: center;
+
+.card-img-top {
+  width: 300px;
+  border-radius: 2%;
 }
 
-.text-muted {
+.title {
   text-transform: uppercase;
   text-decoration: underline;
-  color: blue;
+  color: brown;
+  font-size: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.director {
+  box-shadow: 2px 2px 8px #000;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  max-width: 85vh;
   font-size: 20px;
 }
 .genre-view {
@@ -112,14 +119,13 @@
   justify-content: center;
 }
 
-.genre-view-card {
+.dialog {
   box-shadow: 2px 2px 8px #000;
-  height: 100%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   max-width: 85vh;
   font-size: 20px;
-  text-align: center;
-  justify-content: center;
-  display: block;
+  margin-top: 100px;
+  background-color: #fcfbfb;
 }
 
 .modal-content {
@@ -136,14 +142,22 @@
   flex-wrap: inherit;
 }
 
-.favourite-movie {
+.FavouriteMovie {
+  justify-content: center;
   align-items: center;
-  display: flex;
-  flex-wrap: inherit;
+  text-align: left;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  box-shadow: 2px 2px 8px #000;
+  padding: 20px;
+  background-color: #fdfafa;
 }
 
 .controlId {
   color: aqua;
+}
+
+.header {
+  width: auto;
 }
 
 /*# sourceMappingURL=/src.78399e21.css.map */

@@ -17,11 +17,12 @@ export function GenreView(props) {
   
     const { genre } = props;
    
-    return (<Modal.Dialog className='dialog'>
+    return (
+    <Modal.Dialog className='dialog'>
       
         <Modal.Body>
-        <Card.Text className="text-muted">Description</Card.Text>
-          <p>{genre.Genre.Name}</p>
+        <Card.Text className="text-muted">DESCRIPTION:</Card.Text>
+          <p className='title'>{genre.Genre.Name}</p>
           <p>{ genre.Genre.Description }</p>
         </Modal.Body>
       
@@ -29,7 +30,7 @@ export function GenreView(props) {
         
            
     <Link to={'/'}>
-             <Button variant="primary" size="" block>Back</Button>
+             <Button variant="primary" size="md" block>Back</Button>
             </Link>
         </Modal.Footer>
       </Modal.Dialog>

@@ -33,7 +33,7 @@ export class MovieView extends React.Component {
             />
             </Card.Header>
             <Card.Body className='body'>
-                <Card.Title>{ movieData.Title }</Card.Title>
+                <Card.Title className='title'>{ movieData.Title }</Card.Title>
                 <Card.Text className="text-muted">Description :</Card.Text>
                 <Card.Text>{ movieData.Description }</Card.Text>
 
