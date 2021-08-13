@@ -54736,6 +54736,8 @@ var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
 
 var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
 
+var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -54744,7 +54746,6 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-// import {PropTypes} from 'prop-types';
 var FavouriteMovie = function FavouriteMovie(_ref) {
   var movieData = _ref.movieData,
       favoriteMovies = _ref.favoriteMovies;
@@ -54781,14 +54782,16 @@ var FavouriteMovie = function FavouriteMovie(_ref) {
     return /*#__PURE__*/_react.default.createElement(_Row.default, _defineProperty({
       className: "favourite-movie",
       key: favorite._id
-    }, "className", "w-50 m-3 h-50"), /*#__PURE__*/_react.default.createElement(_Card.default.Header, {
+    }, "className", "w-50 m-3 h-50"), /*#__PURE__*/_react.default.createElement(_Col.default, {
+      md: 12
+    }, /*#__PURE__*/_react.default.createElement(_Card.default.Header, {
       className: "header"
     }, /*#__PURE__*/_react.default.createElement(_Card.default.Img, {
       variant: "top",
       src: favorite.ImagePath
     })), /*#__PURE__*/_react.default.createElement(_Card.default.Body, null, /*#__PURE__*/_react.default.createElement(_Card.default.Title, {
       className: "title"
-    }, favorite.Title), /*#__PURE__*/_react.default.createElement(_Card.default.Text, null, favorite.Description, favorite.Genre.Name), /*#__PURE__*/_react.default.createElement(_Button.default, {
+    }, favorite.Title), /*#__PURE__*/_react.default.createElement(_Card.default.Text, null, favorite.Description), /*#__PURE__*/_react.default.createElement(_Button.default, {
       size: "sm",
       block: true,
       className: "mt-auto",
@@ -54796,13 +54799,13 @@ var FavouriteMovie = function FavouriteMovie(_ref) {
       onClick: function onClick() {
         return RemoveFavourite(favorite);
       }
-    }, "Delete from favourites")));
+    }, "Delete from favourites"))));
   }))));
 };
 
 var _default = FavouriteMovie;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js"}],"components/profile-view/profile-view.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js"}],"components/profile-view/profile-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -55370,7 +55373,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49198" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55954" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

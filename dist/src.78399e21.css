@@ -3,13 +3,15 @@
 }
 .main-view {
   font-size: medium;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   row-gap: 20px;
   display: flex;
 }
 
 .container {
   padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar-link {
@@ -94,8 +96,8 @@
   text-align: center;
 }
 
-.card-img-top {
-  width: 300px;
+.movie-image {
+  width: auto;
   border-radius: 2%;
 }
 
@@ -139,17 +141,14 @@
   align-items: center;
   justify-content: space-around;
   display: flex;
-  flex-wrap: inherit;
 }
 
-.FavouriteMovie {
+.tab-content {
   justify-content: center;
   align-items: center;
   text-align: left;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   box-shadow: 2px 2px 8px #000;
-  padding: 20px;
-  background-color: #fdfafa;
 }
 
 .controlId {
