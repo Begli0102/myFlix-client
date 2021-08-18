@@ -48,9 +48,9 @@ const RemoveFavourite =(favoriteMovies) =>{
                 return (
                   <Row className='favourite-movie' key={favorite._id} className="w-50 m-3 h-50">
                     <Col md={12}>
-                    <Card.Header className='header'>
+                    <Card.Header className='header-img'>
                       <Card.Img
-                        variant="top"
+                      
                         src={favorite.ImagePath}
                       />
                     </Card.Header>

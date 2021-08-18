@@ -26,6 +26,10 @@
 .mb-2 {
   margin-top: 20px;
 }
+
+.card-img {
+  height: 280px;
+}
 .form {
   align-items: center;
   justify-content: center;
@@ -157,6 +161,21 @@
 
 .header {
   width: auto;
+}
+
+.ProfileInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.card-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-img {
+  background-color: none;
 }
 
 /*# sourceMappingURL=/src.78399e21.css.map */

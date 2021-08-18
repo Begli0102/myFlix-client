@@ -22,3 +22,19 @@ box-shadow: 2px 2px 8px #000;
 .header{
   width: auto;
 }
+.ProfileInfo{
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.card-group{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.header-img{
+
+  background-color: none;
+}

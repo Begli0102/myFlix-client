@@ -53661,7 +53661,7 @@ var MovieCard = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement(_Card.default.Header, {
         className: "header"
       }, /*#__PURE__*/_react.default.createElement(_Card.default.Img, {
-        className: "card-img-top",
+        className: "card-img",
         variant: "top",
         src: movieData.ImagePath
       })), /*#__PURE__*/_react.default.createElement(_Card.default.Body, null, /*#__PURE__*/_react.default.createElement(_Card.default.Title, null, movieData.Title), /*#__PURE__*/_react.default.createElement(_Card.default.Text, null, movieData.Description), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
@@ -54785,9 +54785,8 @@ var FavouriteMovie = function FavouriteMovie(_ref) {
     }, "className", "w-50 m-3 h-50"), /*#__PURE__*/_react.default.createElement(_Col.default, {
       md: 12
     }, /*#__PURE__*/_react.default.createElement(_Card.default.Header, {
-      className: "header"
+      className: "header-img"
     }, /*#__PURE__*/_react.default.createElement(_Card.default.Img, {
-      variant: "top",
       src: favorite.ImagePath
     })), /*#__PURE__*/_react.default.createElement(_Card.default.Body, null, /*#__PURE__*/_react.default.createElement(_Card.default.Title, {
       className: "title"
@@ -55373,7 +55372,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55954" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61465" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
