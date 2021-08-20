@@ -1,27 +1,44 @@
-# Project Description:
-This project is a React application that allows users to sign up, log in and get information about movies, genres, and directors. It also allows user to update their account information, add movies in their list of favorites and remove movies from their list of favorites. This application uses an existing server-side REST API and MongoDB database.
+# myFlix-client:
 
-## Essential views and Features:
-- Login view: Displays a welcome screen where users can log in or register for a new account.
-- Registration view: New user can Register through registration view.
-- Main view: In the main view, users can see all movies. They can also search for movies. It allows user to see details about a single movie, genre, director and also have options to add movies to favorite.
-- Single movie view: View the specific movie details.
-- Genre view: View the genre of the movie and details about the genre.
-- Director view: View the director of the movie and details about the director.
-- Profile view: Users can also view their profile where they can see their favorite movies, remove movies from their favorites, and edit their profile details.
+MyFLix application built with React, with routing and several interface views. The client-side will support the existing
+server-side by facilitating user requests and rendering the response from [Movie Api Repository](https://github.com/Begli0102/movie_api) server-side via a number of different interface views. 
 
-## Technical requirements:
-- The application must be a single-page application (SPA)
-- The application must use state routing to navigate between views and share URLs
-- The application must give users the option to filter movies
-- The application must give users the option to sort movies
-- The application must initially use Parcel as its build tool
-- The application must be written using the React library and in ES2015+
-- The application must be written with React Redux (hence respecting the Flux pattern)
-- The application must use Bootstrap as a UI library for styling and responsiveness
-- The application must contain a mix of class components and function components
+## Key Features
 
+### This application:
+- Allow users to register (username, password, email, birthday)
+- Allow users to log in with a username and a password
+- Allow users to update their user info
+- Allow existing users to deregister
+- Return a list of all movies to the user (each listed with an image, title, and description)
+- Sort and filter movies
+- Select a movie and show more information about it
+- Allow users to add or remove a movie to their list of favorites
+- Show data about genres with name and description
+- Show data about directors with name, bio, birth year, death year
+
+## Built with
+
+- React
+- React Redux
+- Redux Thunk
+- React Bootstrap
+- CRA (Create React App)
+- Parcel
+- Netlify
+
+## How to install dependencies
+
+`npm install` 
 ## How to Run
+
 To run this project locally, run the following command, then navigate to the localhost port stated in your terminal.
 
 `parcel src/index.html`
+
+## Usage
+Parcel will run a local server on port: 1234
+
+Open the application in your browser
+
+`http://localhost:1234/`
