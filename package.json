@@ -1,12 +1,14 @@
 {
   "name": "myflixclient",
   "version": "1.0.0",
+  "homepage": "https://Begli0102.github.io/myFlix-client",
   "description": "",
   "main": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+    
   },
   "repository": {
     "type": "git",
@@ -18,10 +20,10 @@
   "bugs": {
     "url": "https://github.com/Begli0102/myFlix-client/issues"
   },
-  "homepage": "https://Begli0102.github.io/myFlix-client",
+  
   "dependencies": {
     "axios": "^0.21.1",
-    "parcel": "^2.0.0-beta.3.1",
+    "parcel": "^2.0.0-rc.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",

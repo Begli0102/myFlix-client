@@ -54782,7 +54782,7 @@ var FavouriteMovie = function FavouriteMovie(_ref) {
     return /*#__PURE__*/_react.default.createElement(_Row.default, _defineProperty({
       className: "favourite-movie",
       key: favorite._id
-    }, "className", "w-50 m-3 h-50"), /*#__PURE__*/_react.default.createElement(_Col.default, {
+    }, "className", " m-3 p-3 h-50"), /*#__PURE__*/_react.default.createElement(_Col.default, {
       md: 12
     }, /*#__PURE__*/_react.default.createElement(_Card.default.Header, {
       className: "header-img"
@@ -55372,7 +55372,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61465" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58129" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

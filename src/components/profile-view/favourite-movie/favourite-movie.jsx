@@ -46,7 +46,7 @@ const RemoveFavourite =(favoriteMovies) =>{
             {
               favoriteMovies && favoriteMovies.map((favorite) => {
                 return (
-                  <Row className='favourite-movie' key={favorite._id} className="w-50 m-3 h-50">
+                  <Row className='favourite-movie' key={favorite._id} className=" m-3 p-3 h-50">
                     <Col md={12}>
                     <Card.Header className='header-img'>
                       <Card.Img
