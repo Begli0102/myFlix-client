@@ -14,11 +14,7 @@ import Col from 'react-bootstrap/Col';
 
 import InputGroup from 'react-bootstrap/InputGroup';
 
-
-
 import './login-view.scss';
-
-
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
@@ -26,10 +22,6 @@ export function LoginView(props) {
   const [usernameError, setUsernameError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
-
-  
-
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,10 +60,7 @@ const formValidation = () => {
   return isValid;
 };
 
-
-
   return (
-
 <Row className="login-form justify-content-md-center">
       <Col md={4}>
         <Form className="login-view">
@@ -108,72 +97,6 @@ const formValidation = () => {
         </Form >
       </Col >
     </Row >
-
-//     <Container className="login-view">
-//     <Row >
-//       <Col md-8 col-md-6 col-12>
-     
-//         <Form className="form" noValidate >
-//              <Form.Group  controlId="registerUsername">
-//                <h1 className='h1' style={{ textAlign: "center" , color: "darkgray"}}></h1>
-//                <Form.Label className='label'>
-//                  Username:
-//                </Form.Label>
-//                <Form.Control  
-//               required
-//               type="text" 
-//               maxLength={20}
-//               minLength={5}
-//               placeholder="Enter username" 
-//               value={username} 
-              
-//               onChange={e => setUsername(e.target.value)} />
-//             <Form.Control.Feedback type="valid">
-//               Welldone!
-//             </Form.Control.Feedback>
-//             <Form.Control.Feedback type="invalid">
-//               This field is mandatory!
-//             </Form.Control.Feedback>
-//           </Form.Group>
-
-        
-//        <Form.Group controlId="registerPassword">
-//          <Form.Label className='label'>
-//          Password:
-//          </Form.Label>
-//          <Form.Control 
-//           required 
-//           type="password" 
-//           placeholder="Enter your Password" 
-//           maxLength={12}
-//           minLength={5}
-//           value={password} 
-//           name="up"
-//           onChange={e => setPassword(e.target.value)} />
-//        <Form.Control.Feedback type="valid">
-//           Welldone!
-//         </Form.Control.Feedback>
-//         <Form.Control.Feedback type="invalid">
-//           This field is mandatory!
-//         </Form.Control.Feedback>
-//       </Form.Group>
-   
-
-     
-//       <Button variant="secondary" size="md " block type='submit'  onClick={handleSubmit}>Submit</Button>
-//          </Form>
-//          </Col>
-//      </Row>
-//      <Container className="mt-4">
-//              <Row className="d-flex align-items-center justify-content-center">
-//                <span>Don't have an account?</span>
-//                <Link to={`/register`}>
-//                  <Button variant="link" className="sign-up-link btn-lg" type="submit">Sign up</Button>
-//                </Link>
-
-//             </Row>
-//            </Container>
-//  </Container>
 
   );
 }

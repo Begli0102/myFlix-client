@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "homepage": "https://Begli0102.github.io/myFlix-client",
   "description": "",
-  "main": "src/index.html",
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-    
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build"
   },
   "repository": {
     "type": "git",
@@ -20,21 +20,22 @@
   "bugs": {
     "url": "https://github.com/Begli0102/myFlix-client/issues"
   },
-  
   "dependencies": {
     "axios": "^0.21.1",
-    "parcel": "^2.0.0-rc.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0",
     "gh-pages": "^3.2.3",
+    "parcel": "^2.0.0",
     "sass": "^1.34.0"
   }
 }

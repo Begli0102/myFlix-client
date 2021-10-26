@@ -1,0 +1,180 @@
+.my-flix {
+  color: steelblue;
+}
+.main-view {
+  font-size: medium;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  row-gap: 20px;
+  display: flex;
+}
+
+.container {
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-link {
+  float: right;
+}
+.header {
+  height: auto;
+  width: 100%;
+  cursor: pointer;
+}
+
+.mb-2 {
+  margin-top: 20px;
+}
+
+.card-img {
+  height: 280px;
+}
+.form {
+  align-items: center;
+  justify-content: center;
+  color: azure;
+  margin: 50 25%;
+  width: 40%;
+}
+
+.label {
+  color: cadetblue;
+}
+
+.register {
+  float: right;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.p {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-view {
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.text-primary {
+  margin-bottom: 50px;
+}
+
+.account {
+  margin-top: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.h1 {
+  margin-bottom: 20px;
+}
+
+.login-view {
+  align-items: center;
+  justify-content: center;
+}
+
+.text-primary {
+  margin-bottom: 50px;
+}
+.movie-view-card {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  box-shadow: 2px 2px 8px #000;
+  display: inline-flex;
+  background-color: #fcfbfb;
+  flex-direction: row;
+  margin-top: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 2%;
+}
+
+.text-muted {
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.body {
+  text-align: center;
+}
+
+.movie-image {
+  width: auto;
+  border-radius: 2%;
+}
+
+.title {
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: brown;
+  font-size: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.director {
+  box-shadow: 2px 2px 8px #000;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  max-width: 85vh;
+  font-size: 20px;
+}
+.genre-view {
+  text-align: center;
+  min-height: 50vh;
+  text-align: center;
+  justify-content: center;
+}
+
+.dialog {
+  box-shadow: 2px 2px 8px #000;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  max-width: 85vh;
+  font-size: 20px;
+  margin-top: 100px;
+  background-color: #fcfbfb;
+}
+
+.modal-content {
+  font-size: 20px;
+}
+
+.text-muted {
+  text-align: center;
+}
+.profile-view-card {
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+}
+
+.tab-content {
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  box-shadow: 2px 2px 8px #000;
+}
+
+.controlId {
+  color: aqua;
+}
+
+.header {
+  width: auto;
+}
+
+.ProfileInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.card-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-img {
+  background-color: none;
+}
+/*# sourceMappingURL=index.caa67093.css.map */

@@ -24,9 +24,7 @@ export class MovieView extends React.Component {
     
     const { movieData } = this.props;
     return (
-      
       <Card className="movie-view-card" >
-        
         <Card.Header>
             <Card.Img 
                 className="movie-image" variant="top" src={movieData.ImagePath} alt={ movieData.Title } 
@@ -36,25 +34,17 @@ export class MovieView extends React.Component {
                 <Card.Title className='title'>{ movieData.Title }</Card.Title>
                 <Card.Text className="text-muted">Description :</Card.Text>
                 <Card.Text>{ movieData.Description }</Card.Text>
-
-                 
                 <Card.Text className="text-muted">Directed by :</Card.Text>
                 <Link to={`/director/${movieData.Director.Name}`}>
                     <Button variant="link">{ movieData.Director.Name }</Button>
                 </Link>
-                
-                
                 <Card.Text className="text-muted">Genre :</Card.Text>
                 <Link to={`/genre/${movieData.Genre.Name}`}>
                   <Button variant="link">{ movieData.Genre.Name }</Button> </Link>
                     {/* { movieData.Genre.map( genre => <ListGroup.Item variant="dark" key={genre.Name}>{ genre.Name }</ListGroup.Item>) } */}
-                  
                 <Link to={"/"}>
                     <Button variant="primary" size="lg" block>Back</Button>
                 </Link>
-              
-
-               
             </Card.Body>
         </Card>
     );

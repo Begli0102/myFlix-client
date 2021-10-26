@@ -1,9 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-
-
 import {Link} from 'react-router-dom';
-
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -160,37 +157,7 @@ console.log(user);
         </Col>
       </Form.Group>
 
-      {/* <Form.Group as={Row}>
-        <Form.Label column sm={2}>
-          Birthday (MM/DD/YYYY)
-        </Form.Label>
-        <Col sm="10">
-          {
-            updateProfile?
-            <Form.Control
-              type="date"
-              defaultValue={
-                (user.Birthday).format('YYYY-MM-DD')
-              }
-              onChange={
-                (e) => {
-                  setBirthday(e.target.value)
-                }
-              }
-            />
-            :
-          <Form.Control
-          type="date"
-          plaintext
-          readOnly
-          defaultValue={
-            (user.Birthday).format('YYYY-MM-DD')
-          }
-          />
-        }
-        </Col>
-      </Form.Group> */}
-
+   
       { 
         updateProfile &&
         <div>

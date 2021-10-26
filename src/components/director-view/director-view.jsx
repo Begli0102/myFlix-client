@@ -30,7 +30,8 @@ export function DirectorView(props) {
 
   <Modal.Footer>
   
-  <Link to={"/"}><Button variant="primary" size="lg" block>Back</Button></Link>
+  <Link to={'/'}>
+    <Button variant="primary" size="lg" block>Back</Button></Link>
   </Modal.Footer>
 </Modal.Dialog>
     

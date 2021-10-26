@@ -142,7 +142,7 @@ export function RegistrationView(props) {
             );
           })}
         </Form.Group>
-       
+
         <Form.Group controlId="formBirthdate">
           <Form.Label>Birthdate:</Form.Label>
           <Form.Control type="date" placeholder='MM/DD/YYYY' onChange={e => setBirthday(e.target.value)} />
@@ -154,7 +154,7 @@ export function RegistrationView(props) {
             );
           })}
         </Form.Group>
-
+        
         <Button  variant="secondary" type='submit' onClick={handleSubmit} block>Submit</Button>
       </Form>
     </Col>
