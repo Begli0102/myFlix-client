@@ -1,6 +1,10 @@
 import React from 'react';
 import Col from 'react-bootstrap/Col';
+import PropTypes from 'prop-types';
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 
+import './movie-view.scss';
 
 export class MovieView extends React.Component {
 
@@ -9,10 +13,8 @@ export class MovieView extends React.Component {
       console.log(event.key);
     });
   }
-
   render() {
-    const { movieData,onBackClick } = this.props;
-
+    const { movieData, onBackClick } = this.props;
     return (
       <div className="movie-view">
         <div className="movie-poster">
@@ -28,14 +30,32 @@ export class MovieView extends React.Component {
         </div>
         <div className="director">
           <span className="label">Director: </span>
-          <span className="value">{movieData.Director}</span>
+          <span className="value">{movieData.Director.Name}</span>
         </div>
         <div className="genre">
           <span className="label">Genre: </span>
-          <span className="value">{movieData.Genre}</span>
+          <span className="value">{movieData.Genre.Name}</span>
         </div>
-        <button onClick={() => {onBackClick(null);}}>Back</button>
-       </div>
+        <Button className='button' variant="secondary"  onClick={() => { onBackClick(null); }}>Back</Button>
+      </div>
     );
   }
 }
+MovieView.propTypes = {
+  movieData: PropTypes.shape({
+    Title: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired,
+    ImagePath: PropTypes.string.isRequired,
+    Genre: PropTypes.shape({
+      Name: PropTypes.string.isRequired,
+      Description: PropTypes.string.isRequired,
+    }),
+    Director: PropTypes.shape({
+      Name: PropTypes.string.isRequired,
+      Bio: PropTypes.string.isRequired,
+      Birth: PropTypes.string.isRequired,
+      Death: PropTypes.string,
+    }),
+  }).isRequired,
+  onBackClick: PropTypes.func.isRequired
+};

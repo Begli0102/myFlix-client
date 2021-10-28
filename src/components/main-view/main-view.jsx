@@ -3,8 +3,13 @@ import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+
+import './main-view.scss';
+
+
 import  {LoginView} from '../login-view/login-view';
 import  {RegistrationView} from '../registration-view/registration-view';
+
 import  {MovieCard}  from '../movie-card/movie-card';
 import  {MovieView} from '../movie-view/movie-view';
 
@@ -19,10 +24,15 @@ export class MainView extends React.Component {
     };
   }
 
-
-     
-  //using axios method to fetch movies from heroku
   
+
+  keypressCallback(event) {
+    console.log(event.key);
+  }
+
+
+  //using axios method to fetch movies from heroku
+
   componentDidMount(){
     axios.get('https://myflix01025.herokuapp.com/movies')
       .then(response => {
@@ -65,31 +75,32 @@ onRegistration(register) {
 
      if (movies.length === 0) return <div className = "main-view"></div>;
      return (
-     <div className="main-view">
+     <Row className="main-view justify-content-md-center">
            {selectedMovie
              ? (
-             <Row className="justify-content-md-center">
+
                <Col md={8}>
                <MovieView movieData = {selectedMovie} onBackClick = {(newSelectMovie) => {this.setSelectedMovie(newSelectMovie);}}/>
                </Col>
-               </Row>
-               )  
-             
-             : ( 
-             <Row className="justify-content-md-center">
-               {movies.map(movie => (
-               
-                <Col md={3}>
+
+               )
+
+             : (
+               movies.map(movie => (
+
+                <Col md={4}>
                    <MovieCard key={movie._id} movieData={movie} onMovieClick = {(movie) => {this.setSelectedMovie(movie)}} />
                 </Col>
-                 ))}
-                </Row>
-             )
+                 ))
+
+               )
               }
-           
-             </div>
+           </Row>
+
      )
 };
-}
+
+};
+
 
 export default MainView;
