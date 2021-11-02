@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-// import Badge from 'react-bootstrap/Badge';
 import Row from 'react-bootstrap/Row';
-// import {PropTypes} from 'prop-types';
 import Col from 'react-bootstrap/Col';
+
+
 const FavouriteMovie = ({ movieData, favoriteMovies }) => {
   
 const RemoveFavourite =(favoriteMovies) =>{
-
 
     let username = localStorage.getItem('user');
     let token = localStorage.getItem('token');
@@ -35,19 +34,18 @@ const RemoveFavourite =(favoriteMovies) =>{
       )
   }
 
-
-  
   return (
+    
     
       <Card className="FavouriteMovie" >
         <div col-sm-6 bg-success>
-          <h1 className="h1 m-3">Favourite Movies</h1>
+          <h1 className="h1 m-4 p-1" >Favourite Movies</h1>
           <div className="card-group">
             {
               favoriteMovies && favoriteMovies.map((favorite) => {
                 return (
-                  <Row className='favourite-movie'  key={favorite._id} className=" m-3 p-3 h-50">
-                    <Col md={12}>
+                  <Row className='favourite-movie'  key={favorite._id} className=" m-1 p-1 h-80">
+                    <Col >
                     <Card.Header className='header-img'>
                       <Card.Img
                       
@@ -56,10 +54,10 @@ const RemoveFavourite =(favoriteMovies) =>{
                     </Card.Header>
                     <Card.Body>
                       <Card.Title className='title'>{favorite.Title}</Card.Title>
-                      <Card.Text>
-                        {favorite.Description}
+                      {/* <Card.Text>
+                        {favorite.Description} */}
                         {/* {favorite.Genre.Name} */}
-                      </Card.Text>
+                      {/* </Card.Text> */}
                       <Button
                         size="sm"
                         block

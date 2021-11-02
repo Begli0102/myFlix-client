@@ -1,25 +1,16 @@
-.genre-view{
-// background-color:rgb(198, 233, 235); 
-text-align: center;
-min-height: 50vh;
-text-align: center;
-justify-content: center;
+.button-genre{
+    background-color: rgb(51, 89, 211);
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+    padding: 5px 10px;
+    outline: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
-.dialog{
-    box-shadow: 2px 2px 8px #000;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-     max-width: 85vh;
-     font-size: 20px;
-    margin-top: 100px;
-    background-color: rgb(252, 251, 251);
+.button-genre:hover{
+color:crimson;
 }
-.modal-content{
-    
-    //  background-color: rgba(247, 247, 252, 0.548);
-     font-size: 20px;
-   }
-
-   .text-muted{
-       text-align: center;
-   }

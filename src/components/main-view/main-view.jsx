@@ -101,19 +101,19 @@ render() {
   
   return (  
     <Router>
-    
-    <Navbar sticky="top"  bg="light" expand="lg">
-          <Navbar.Brand href="#home">MyFlix</Navbar.Brand>
+     
+    <Navbar sticky="top"  bg="dark" variant="dark" className='navbar'>
+          <Navbar.Brand className ='nav-brand fs-2 ' href="/">MyFlix</Navbar.Brand>
           {!user ? 
           (
             <ul>
               <Link to={`/`}>
-                <Button
+                <a
                   variant="link"
-                  className="navbar-link"
+                  className="navbar-item fs-5"
                 >
                   Sign In
-                  </Button>
+                  </a>
               </Link>
               {/* <Link to={`/register`}>
                 <Button
@@ -127,29 +127,29 @@ render() {
           ) : (
             <ul>
               <Link to={`/`}>
-                <Button
+                <a
                   variant="link"
-                  className="navbar-link"
+                  className="navbar-item fs-5"
                 >
                   Movies
-                  </Button>
+                  </a>
               </Link>
               <Link to={`/users/${user}`}>
-                <Button
+                <a
                   variant="link"
-                  className="navbar-link"
+                  className="navbar-item fs-5"
                 >
                   My Account
-                  </Button>
+                  </a>
               </Link>
               <Link to={`/register`}>
-                <Button
+                <a
                   variant="link"
-                  className="navbar-link"
+                  className="navbar-item fs-5"
                   onClick={() => this.onLoggedOut()}
                 >
                   Sign Out
-                  </Button>
+                  </a>
               </Link>
             </ul>
           )}
@@ -193,7 +193,7 @@ render() {
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                 </Col>
                    if (movies.length === 0) return <div className="main-view" />;
-            return <Col md={8}>
+            return <Col md={8} >
                 <MovieView movieData={movies.find(movie=> movie._id === match.params.movieId)} onBackClick={() => history.goBack()} />
                   </Col>
           }} />

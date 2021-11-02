@@ -189,7 +189,7 @@ console.log(user);
               Update My Profile
           </Button>
             {' '}
-          <Link to="/">
+          <Link to={`/users/${user}`}>
             <Button variant="outline-primary">
               Back
             </Button>

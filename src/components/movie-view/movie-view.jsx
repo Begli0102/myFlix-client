@@ -1,8 +1,8 @@
 import React from 'react';
-import Col from 'react-bootstrap/Col';
 import PropTypes from 'prop-types';
-// import Modal from 'react-bootstrap/Modal'
+import axios from "axios";
 import Button from 'react-bootstrap/Button'
+import Media from 'react-bootstrap/Media';
 import { Link } from 'react-router-dom';
 
 import './movie-view.scss';
@@ -18,36 +18,67 @@ export class MovieView extends React.Component {
   });
   }
 
-  
+  handleAdd() {
+    const token = localStorage.getItem("token");
+    const user = localStorage.getItem("user");
+    axios.put(`https://myflix01025.herokuapp.com/users/${user}` + "/movies/" +
+      this.props.movieData._id, {},
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
+      .then((response) => {
+        console.log(response);
+        alert(this.props.movieData.Title + " has been added to your favorites movie.");
+      })
+  }
 
   render() {
-    
     const { movieData } = this.props;
+   
     return (
-      <Card className="movie-view-card" >
-        <Card.Header>
-            <Card.Img 
-                className="movie-image" variant="top" src={movieData.ImagePath} alt={ movieData.Title } 
-            />
-            </Card.Header>
-            <Card.Body className='body'>
-                <Card.Title className='title'>{ movieData.Title }</Card.Title>
-                <Card.Text className="text-muted">Description :</Card.Text>
-                <Card.Text>{ movieData.Description }</Card.Text>
-                <Card.Text className="text-muted">Directed by :</Card.Text>
-                <Link to={`/director/${movieData.Director.Name}`}>
-                    <Button variant="link">{ movieData.Director.Name }</Button>
-                </Link>
-                <Card.Text className="text-muted">Genre :</Card.Text>
-                <Link to={`/genre/${movieData.Genre.Name}`}>
-                  <Button variant="link">{ movieData.Genre.Name }</Button> </Link>
-                    {/* { movieData.Genre.map( genre => <ListGroup.Item variant="dark" key={genre.Name}>{ genre.Name }</ListGroup.Item>) } */}
-                <Link to={"/"}>
-                    <Button variant="primary" size="lg" block>Back</Button>
-                </Link>
-            </Card.Body>
-        </Card>
-    );
+      <div className="movie-view">
+      <Media className="d-flex flex-column flex-md-row align-items-center ml-xs-5">
+        <Media.Body>
+          <span className="d-flex align-items-center">
+          <img
+          width={220}
+          height={326}
+          className="ml-4"
+          src={movieData.ImagePath}
+          alt="movie-poster placeholder"
+        />
+            <h1 className="display-4">{movieData.Title}</h1>
+          </span>
+          <span className="d-flex align-items-center">
+            <h4 className="text-muted mt-4 mr-2">Genre: </h4>
+            <Link to={`/genre/${movieData.Genre.Name}`}>
+              <h4 className="genre-link link mt-4">{movieData.Genre.Name}</h4>
+            </Link>
+          </span>
+          <span className="d-flex align-items-center mb-4">
+            <h4 className="text-muted mr-2">Director: </h4>
+            <Link to={`/director/${movieData.Director.Name}`}>
+              <h4 className="director-link link">{movieData.Director.Name}</h4>
+            </Link>
+          </span>
+          <p className="text-justify">{movieData.Description}</p>
+        </Media.Body>
+       
+      </Media>
+      <Link to="/">
+            <Button variant="secondary" >
+            
+              Back
+            </Button>
+          </Link>
+      <Button className="add-favorite-btn" onClick={e => this.handleAdd(e)}>
+        <span className="d-flex align-items-center">
+          Add to favorites
+            </span>
+
+      </Button>
+      
+    </div >
+        );
   }
 }
 MovieView.propTypes = {

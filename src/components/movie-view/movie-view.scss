@@ -1,35 +1,21 @@
 
- .movie-view-card{
+.display-4{
+  color: crimson;
+  margin-left: 20px;
+}
+
+.movie-view{
+  margin-top: 50px;
   
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  box-shadow: 2px 2px 8px #000;
-
-  display:inline-flex;
- background-color: rgb(252, 251, 251);
- flex-direction: row;
-margin-top: 100px;
-  border: 1px solid rgba(0,0,0,.125);
-  border-radius: 2%;
+}
+.ml-4{
+  border-radius: 10px;
 }
 
-.text-muted{
-  text-decoration: underline;
-  
-  font-size: 20px;
+.add-favorite-btn{
+  margin-left: 20px;
 }
 
-.body{
-  text-align: center;
+.btn-secondary:hover{
+  color: aqua;
 }
-
- .movie-image{
-  width: auto;   
-  border-radius: 2%;
- }
- .title{
-  text-transform: uppercase;
-  text-decoration: underline;
-  color: brown;
-  font-size: 30px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
- }

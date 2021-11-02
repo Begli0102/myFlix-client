@@ -87,7 +87,7 @@ const formValidation = () => {
               );
             })}
           </Form.Group>
-          <Button variant="primary" type="submit" block onClick={handleSubmit}>Submit</Button>
+          <Button className='login-button' variant="primary" type="submit" block onClick={handleSubmit}>Submit</Button>
          <div className='account'> 
            <span>
             Don't have an account?

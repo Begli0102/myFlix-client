@@ -1,8 +1,6 @@
 
-.header{
-  height: auto;
-  width: 100%;
-  cursor: pointer;
+.movie-card{
+  background-color: crimson;
 }
 
 
@@ -10,6 +8,7 @@
   margin-top: 20px;
 }
 .card-img{
- 
-  height: 280px;
+ border: 10px;
+  height: 300px;
+  width: 200px;
 }

@@ -15,9 +15,6 @@ box-shadow: 2px 2px 8px #000;
 
 
 }
-.controlId{
-  color: aqua;
-}
 
 .header{
   width: auto;
@@ -28,13 +25,16 @@ box-shadow: 2px 2px 8px #000;
   padding: 30px;
 }
 
-.card-group{
+// .card-group{
+//   display: flex;
+//   flex-direction: column;
+
+
+// }
+
+.FavouriteMovie{
   display: flex;
   flex-direction: column;
-
-}
-
-.header-img{
-
-  background-color: none;
+  width: 100%;
+  min-height: 100vh;
 }

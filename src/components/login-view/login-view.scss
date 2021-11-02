@@ -2,12 +2,14 @@
   align-items: center;
   justify-content: center;
   color: azure;
-  margin:50 25%;
+  margin:20px;
   width: 40%;
   
 }
 .label{
   color:cadetblue;
+  margin: 10px 5px;
+
 }
 .register{
   float:right;
@@ -24,15 +26,24 @@ align-items: center;
 .login-view{
   align-items: center;
   justify-content: center;
-margin-top: 100px;
+margin-top: 50px;
  
 }
 
 .text-primary{
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .account{
  margin-top: 30px;
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-button{
+  margin-top: 20px;
+}
+
+.form-group{
+  margin-top: 20px;
 }

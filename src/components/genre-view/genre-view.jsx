@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Modal from 'react-bootstrap/Modal';
+
+import Media from 'react-bootstrap/Media';
 
 import './genre-view.scss';
 
@@ -14,19 +11,19 @@ export function GenreView(props) {
     const { genre } = props;
    
     return (
-    <Modal.Dialog className='dialog'>
-        <Modal.Body>
-        <Card.Text className="text-muted">DESCRIPTION:</Card.Text>
-          <p className='title'>{genre.Genre.Name}</p>
-          <p>{ genre.Genre.Description }</p>
-        </Modal.Body>
-        <Modal.Footer>  
-    <Link to={'/'}>
-             <Button variant="primary" size="md" block>Back</Button>
-            </Link>
-        </Modal.Footer>
-      </Modal.Dialog>
- 
+    
+    <Media className="d-flex flex-column  align-items-center ml-md-5 mt-5">
+    <Media.Body>
+      
+      <div className="align-items-center">
+        <h4 className="display-4">DESCRIPTION: </h4>
+        <p className ='display-5'>{genre.Genre.Name}</p>
+        <p>{ genre.Genre.Description }</p>
+      </div>
+    </Media.Body>
+    <Link to='/'>
+    <button className="button-genre" >Back</button></Link>
+    </Media>
     );
 }
 

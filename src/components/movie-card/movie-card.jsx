@@ -10,7 +10,8 @@ import './movie-card.scss';
 import { Link } from "react-router-dom";
 
   export class MovieCard extends React.Component {
-    handleAdd() {
+    
+     handleAdd() {
       const token = localStorage.getItem("token");
       const user = localStorage.getItem("user");
       axios.put(`https://myflix01025.herokuapp.com/users/${user}` + "/movies/" +
@@ -29,8 +30,8 @@ import { Link } from "react-router-dom";
     return (
       
 
-      <Card className='movie-card' border="primary">
-     <Card.Header className='header'>
+      <Card className='movie-card ' border="primary">
+     <Card.Header classNameName='header'>
   <Card.Img  className='card-img' variant="top" src={movieData.ImagePath}  />
   </Card.Header> 
   <Card.Body>
@@ -41,9 +42,7 @@ import { Link } from "react-router-dom";
     <Link to={`/movies/${movieData._id}`}>
         <Button variant="secondary" size="md" block> View Details</Button>
     </Link>
-    <Link to={`/movies/${movieData._id}`}>
-            <Button className="mb-2" block variant="primary" onClick={() => this.handleAdd(movieData)}>Add to favourite</Button>
-          </Link>
+   
     </Card.Body>
 </Card>
 

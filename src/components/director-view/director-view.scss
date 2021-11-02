@@ -1,9 +1,22 @@
-.director{
-   box-shadow: 2px 2px 8px #000;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    max-width: 85vh;
-    font-size: 20px;
-    // text-align: center;
-    // justify-content: center;
+.align-items-center{
+   top: 50px;
   
+}
+
+.button-director{
+    background-color: rgb(51, 89, 211);
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+    padding: 5px 10px;
+    outline: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    
+}
+
+.button-director:hover{
+color:crimson;
 }
