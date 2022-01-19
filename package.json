@@ -1,7 +1,7 @@
 {
   "name": "myflixclient",
   "version": "1.0.0",
-  "homepage": "https://Begli0102.github.io/myFlix-client",
+  "homepage": "https://Begli0102.github.io/myFlix",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
