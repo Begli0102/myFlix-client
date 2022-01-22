@@ -3,6 +3,7 @@
 MyFLix application built with React, with routing and several interface views. The client-side will support the existing
 server-side by facilitating user requests and rendering the response from [Movie Api Repository](https://github.com/Begli0102/movie_api) server-side via a number of different interface views. 
 
+<img src ='src/images/main view.png'>
 ## Key Features
 
 ### This application:
