@@ -1,13 +1,14 @@
 {
   "name": "myflixclient",
   "version": "1.0.0",
-  "homepage": "https://Begli0102.github.io/myFlix",
+  "homepage": "https://Begli0102.github.io/myFlix-client",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "parcel build src/index.html"
+    
   },
   "repository": {
     "type": "git",
