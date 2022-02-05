@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main-view {
+  font-size: medium;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  row-gap: 20px;
+  display: flex;
+}
+
+.container {
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-brand {
+  padding: 2px 10px;
+  font-weight: 500;
+  letter-spacing: 0.5rem;
+  color: crimson;
+}
+
+.navbar-item {
+  color: white;
+  outline: none;
+  justify-content: space-between;
+  margin-right: 15px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+}
+.movie-card {
+  background-color: crimson;
+}
+
+.mb-2 {
+  margin-top: 20px;
+}
+
+.card-img {
+  border: 10px;
+  height: 300px;
+  width: 200px;
+}
+.form {
+  align-items: center;
+  justify-content: center;
+  color: azure;
+  margin: 20px;
+  width: 40%;
+}
+
+.label {
+  color: cadetblue;
+  margin: 10px 5px;
+}
+
+.register {
+  float: right;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.p {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-view {
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.text-primary {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.account {
+  margin-top: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-button {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+.h1 {
+  margin-bottom: 20px;
+}
+
+.login-view {
+  align-items: center;
+  justify-content: center;
+}
+.display-4 {
+  color: crimson;
+  margin-left: 20px;
+}
+
+.movie-view {
+  margin-top: 50px;
+}
+
+.ml-4 {
+  border-radius: 10px;
+}
+
+.add-favorite-btn {
+  margin-left: 20px;
+}
+
+.btn-secondary:hover {
+  color: aqua;
+}
+.align-items-center {
+  top: 50px;
+}
+
+.button-director {
+  background-color: #3359d3;
+  width: 200px;
+  height: 40px;
+  font-size: 18px;
+  padding: 5px 10px;
+  outline: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.button-director:hover {
+  color: crimson;
+}
+.button-genre {
+  background-color: #3359d3;
+  width: 200px;
+  height: 40px;
+  font-size: 18px;
+  padding: 5px 10px;
+  outline: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.button-genre:hover {
+  color: crimson;
+}
+.profile-view-card {
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+}
+
+.tab-content {
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  box-shadow: 2px 2px 8px #000;
+}
+
+.header {
+  width: auto;
+}
+
+.ProfileInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.FavouriteMovie {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+/*# sourceMappingURL=index.1f6edfee.css.map */
